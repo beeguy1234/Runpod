@@ -27,4 +27,6 @@ echo "Download WAN VAEs..."
 wget -nc -c "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors" -O "/workspace/runpod-slim/ComfyUI/models/vae/wan2.1_vae.safetensors"
 wget -nc -c "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan2.2_vae.safetensors" -O "/workspace/runpod-slim/ComfyUI/models/vae/wan2.2_vae.safetensors"
 
+wget -nc -c "https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/vae/diffusion_pytorch_model.safetensors" -O "/workspace/runpod-slim/ComfyUI/models/vae/SD3_vae.safetensors"
+
 echo "--- Alle downloads voltooid ---"
