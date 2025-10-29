@@ -10,12 +10,21 @@ mkdir -p /workspace/runpod-slim/ComfyUI/models/loras
 mkdir -p /workspace/runpod-slim/ComfyUI/models/upscale_models
 mkdir -p /workspace/runpod-slim/ComfyUI/models/vae
 
-# Download Checkpoints
-echo "Download t5_umt5-xxl-enc-bf16..."
-wget -c "https://huggingface.co/Wan-AI/Wan2.2-Animate-14B/blob/main/models_t5_umt5-xxl-enc-bf16.pth"  -O "/workspace/runpod-slim/ComfyUI/models/clip/models_t5_umt5-xxl-enc-bf16.pth"
+# Checkpoints
+wget -nc -c "https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors" -O "/workspace/runpod-slim/ComfyUI/models/checkpoints/sd3.5_large.safetensors"
 
-# Download VAE
-echo "Download WAN2.1 VAE..."
-wget -c "https://huggingface.co/Wan-AI/Wan2.2-Animate-14B/blob/main/Wan2.1_VAE.pth" -O "/workspace/runpod-slim/ComfyUI/models/vae/Wan2.1_VAE.pth"
+# Loras
+wget -nc -c "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_animate_14B_relight_lora_bf16.safetensors" -O "/workspace/runpod-slim/ComfyUI/models/loras/wan2.2_animate_14B_relight_lora_bf16.safetensors
+wget -nc -c "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors" -O "/workspace/runpod-slim/ComfyUI/models/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors
+wget -nc -c "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors" -O "/workspace/runpod-slim/ComfyUI/models/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors
+
+# Text Encoders
+wget -nc -c "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors" -O "/workspace/runpod-slim/ComfyUI/models/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+# OF wget -nc -c "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors" -O "/workspace/runpod-slim/ComfyUI/models/text_encoders/umt5_xxl_fp16.safetensors"
+
+# VAE
+echo "Download WAN VAEs..."
+wget -nc -c "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors" -O "/workspace/runpod-slim/ComfyUI/models/vae/wan2.1_vae.safetensors"
+wget -nc -c "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan2.2_vae.safetensors" -O "/workspace/runpod-slim/ComfyUI/models/vae/wan2.2_vae.safetensors"
 
 echo "--- Alle downloads voltooid ---"
