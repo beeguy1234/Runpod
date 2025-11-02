@@ -90,8 +90,6 @@ DOWNLOADS=(
 	["https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors"]="text_encoders"
 	["https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors"]="checkpoints"
  )
-ARIA2_OPTS="-c -x 16 -s 16"
-ARIA2_HEADER="--header Authorization: Bearer ${MIJN_SECRET}"
 
 i=0
 total_downloads=${#DOWNLOADS[@]}
