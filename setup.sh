@@ -13,6 +13,7 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 
 # Install additional custom nodes
  CUSTOM_NODES=(
+  "https://github.com/ltdrdata/ComfyUI-Manager.git"
   "https://github.com/kijai/ComfyUI-KJNodes"
   "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git"
   "https://github.com/yolain/ComfyUI-Easy-Use"
