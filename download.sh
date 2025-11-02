@@ -38,8 +38,13 @@ ALL_DOWNLOADS[WAN_LORA_RELIGHT]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyU
 ALL_DOWNLOADS[WAN_LORA_I2V_HIGH]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors|loras"
 ALL_DOWNLOADS[WAN_LORA_I2V_LOW]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors|loras"
 ALL_DOWNLOADS[WAN_LORA_LIGHTX]="https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors|loras"
+ALL_DOWNLOADS[WAN_DIFFMOD_I2V_HIGH]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors|diffusion_models"
+ALL_DOWNLOADS[WAN_DIFFMOD_I2V_LOW]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors|diffusion_models"
+ALL_DOWNLOADS[WAN_DIFFMOD_ANIMATE]="https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/Wan22Animate/Wan2_2-Animate-14B_fp8_scaled_e4m3fn_KJ_v2.safetensors|diffusion_models"
 ALL_DOWNLOADS[WAN_VAE_2_1]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors|vae"
 ALL_DOWNLOADS[WAN_VAE_2_2]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan2.2_vae.safetensors|vae"
+ALL_DOWNLOADS[VITPOSE_L]="https://huggingface.co/JunkyByte/easy_ViTPose/resolve/main/onnx/wholebody/vitpose-l-wholebody.onnx|detection"
+ALL_DOWNLOADS[YOLOV10M]="https://huggingface.co/Wan-AI/Wan2.2-Animate-14B/resolve/main/process_checkpoint/det/yolov10m.onnx|detection"
 ALL_DOWNLOADS[UPSCALER_ESRGAN_X2]="https://huggingface.co/dtarnow/UPscaler/resolve/main/RealESRGAN_x2plus.pth|upscale_models"
 
 
@@ -62,12 +67,11 @@ GROUP_FLUX=(
 # Groep 3: Wan 2.2 I2V (Alles voor Wan)
 GROUP_WAN_I2V=(
     "UMT5"
-    "WAN_LORA_RELIGHT"
     "WAN_LORA_I2V_HIGH"
     "WAN_LORA_I2V_LOW"
-    "WAN_LORA_LIGHTX"
-    "WAN_VAE_2_1"
     "WAN_VAE_2_2"
+    "WAN_DIFFMOD_I2V_HIGH"
+    "WAN_DIFFMOD_I2V_LOW"
 )
 
 # Groep 4: Upscaler (Algemeen)
@@ -76,11 +80,14 @@ GROUP_UPSCALER=(
 )
 
 # Groep 5: ALLES
-GROUP_ALL=(
-    "${GROUP_SD3_5[@]}"
-    "${GROUP_FLUX[@]}"
-    "${GROUP_WAN_I2V[@]}"
-    "${GROUP_UPSCALER[@]}"
+GROUP_WAN_ANIMATE=(
+    "UMT5"
+    "WAN_LORA_LIGHTX"
+    "WAN_LORA_RELIGHT"
+    "WAN_VAE_2_1"
+    "WAN_DIFFMOD_ANIMATE"
+    "VITPOSE_L"
+    "YOLOV10M"    
 )
 
 
