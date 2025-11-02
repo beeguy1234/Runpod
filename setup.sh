@@ -19,7 +19,7 @@ uv pip install --no-cache -r requirements.txt
 uv pip install --no-cache torch torchvision torchaudio
 uv pip install --no-cache GitPython numpy pillow opencv-python  # Common dependencies
 
-apt-get updates
+apt-get update
 apt-get -y install aria2
 
 python main.py --listen --port 8188
