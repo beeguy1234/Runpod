@@ -47,6 +47,7 @@ ALL_DOWNLOADS[WAN_VAE_2_2]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Rep
 ALL_DOWNLOADS[VITPOSE_L]="https://huggingface.co/JunkyByte/easy_ViTPose/resolve/main/onnx/wholebody/vitpose-l-wholebody.onnx|detection"
 ALL_DOWNLOADS[YOLOV10M]="https://huggingface.co/Wan-AI/Wan2.2-Animate-14B/resolve/main/process_checkpoint/det/yolov10m.onnx|detection"
 ALL_DOWNLOADS[UPSCALER_ESRGAN_X2]="https://huggingface.co/dtarnow/UPscaler/resolve/main/RealESRGAN_x2plus.pth|upscale_models"
+ALL_DOWNLOADS[UPSCALER_NOMOS_ESRGAN_X2]="https://huggingface.co/Kyca/KycasFiles/resolve/main/2xNomosUni_esrgan_multijpg.pth|upscale_models"
 
 
 # --- 2. DEFINIEER HIER JE GROEPEN ---
@@ -78,6 +79,7 @@ GROUP_WAN_I2V=(
 # Groep 4: Upscaler (Algemeen)
 GROUP_UPSCALER=(
     "UPSCALER_ESRGAN_X2"
+    "UPSCALER_NOMOS_ESRGAN_X2"
 )
 
 # Groep 5: Wan Animate
@@ -91,6 +93,10 @@ GROUP_WAN_ANIMATE=(
     "YOLOV10M"
     "SEGMENTATION"
 )
+
+# icm IPadapters
+GROUP_STABLE_YOGI=(
+ )
 
 
 # --- 3. DOWNLOAD FUNCTIE ---
