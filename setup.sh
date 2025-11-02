@@ -40,6 +40,7 @@ pip install uv
 uv pip install --no-cache -r requirements.txt
 uv pip install --no-cache torch torchvision torchaudio
 uv pip install --no-cache GitPython numpy pillow opencv-python  # Common dependencies
+uv pip install sageattention==2.2.0 --no-build-isolation
 
 # Install dependencies for all custom nodes
         cd "/app/ComfyUI/custom_nodes"
@@ -73,7 +74,7 @@ apt-get update
 apt-get -y install aria2
 
 cd /app/ComfyUI
-python main.py --listen --port 8188 &
+python main.py --listen --port 8188  --use-sage-attention &
 
 declare -A DOWNLOADS
 DOWNLOADS=(
