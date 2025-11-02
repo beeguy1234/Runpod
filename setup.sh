@@ -23,9 +23,9 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 
  for repo in "${CUSTOM_NODES[@]}"; do
      repo_name=$(basename "$repo")
-     if [ ! -d "/app/comfyUI/custom_nodes/$repo_name" ]; then
+     if [ ! -d "/app/ComfyUI/custom_nodes/$repo_name" ]; then
          echo "Downloading $repo_name..."
-         cd "/app/comfyUI/custom_nodes"
+         cd "/app/ComfyUI/custom_nodes"
          git clone "$repo"
      fi
  done
