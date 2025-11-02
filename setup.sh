@@ -75,4 +75,36 @@ apt-get -y install aria2
 cd /app/ComfyUI
 python main.py --listen --port 8188 &
 
-# aria2c -c -x 16 -s 16 --header="Authorization: Bearer ${MIJN_SECRET}" https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors -d /app/ComfyUI/models/checkpoints -o sd3.5_large.safetensors
+declare -A DOWNLOADS
+DOWNLOADS=(
+    ["https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors"]="checkpoints"
+    ["https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_animate_14B_relight_lora_bf16.safetensors"]="loras"
+	["https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors"]="loras"
+	["https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors"]="loras"
+	["https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors"]="loras"
+	["https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors"]="vae"
+	["https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan2.2_vae.safetensors"]="vae"
+	["https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/vae/diffusion_pytorch_model.safetensors"]="vae"
+	["https://huggingface.co/dtarnow/UPscaler/resolve/main/RealESRGAN_x2plus.pth"]="upscale_models"
+	["https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors"]="text_encoders"
+	["https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors"]="text_encoders"
+ )
+ARIA2_OPTS="-c -x 16 -s 16"
+ARIA2_HEADER="--header=Authorization: Bearer ${MIJN_SECRET}"
+
+i=0
+total_downloads=${#DOWNLOADS[@]}
+for url in "${!DOWNLOADS[@]}"; do
+    ((i++))
+    dest_dir="/app/ComfyUI/models/${DOWNLOADS[$url]}"
+    filename=$(basename "$url")
+    mkdir -p "$dest_dir"
+    aria2c $ARIA2_OPTS $ARIA2_HEADER "$url" -d "$dest_dir" -o "$filename"
+    # Controleer de exit-status van het commando
+    if [ $? -eq 0 ]; then
+        echo "Download van $filename voltooid."
+    else
+        echo "Waarschuwing: Download van $filename is mislukt."
+    fi
+done
+ 
