@@ -40,8 +40,8 @@ pip install uv
 uv pip install --no-cache -r requirements.txt
 uv pip install --no-cache torch torchvision
 uv pip install --no-cache GitPython numpy pillow opencv-python  # Common dependencies
-uv pip install pip install onnx onnxruntime-gpu
-#uv pip install sageattention==2.2.0 --no-build-isolation
+uv pip install --no-cache triton onnx onnxruntime-gpu
+uv pip install --no-cache sageattention --no-build-isolation
 
 # Install dependencies for all custom nodes
         cd "/app/ComfyUI/custom_nodes"
