@@ -5,7 +5,7 @@ if [ -z "$MIJN_SECRET" ]; then
   echo "Fout: De variabele MIJN_SECRET is niet ingesteld."
   exit 1
 fi
-echo "Het ontvangen (deels verborgen) secret begint met: ${MIJN_SECRET:0:4}..."
+echo "Secret voor huggingface begint met: ${MIJN_SECRET:0:4}..."
 
 mkdir -p /app
 cd /app
