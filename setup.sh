@@ -74,7 +74,7 @@ apt-get update
 apt-get -y install aria2
 
 cd /app/ComfyUI
-python main.py --listen --port 8188 &
+nohup python main.py --listen --port 8188 &
 
 declare -A DOWNLOADS
 DOWNLOADS=(
