@@ -32,7 +32,10 @@ declare -A ALL_DOWNLOADS
 
 ALL_DOWNLOADS[SD3_5_CHECKPOINT]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors|checkpoints"
 ALL_DOWNLOADS[SD3_5_VAE]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/vae/diffusion_pytorch_model.safetensors|vae"
+ALL_DOWNLOADS[FLUX_DEV]="https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev.safetensors|checkpoints"
 ALL_DOWNLOADS[T5]="https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors|text_encoders"
+ALL_DOWNLOADS[CLIP_G]="https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/resolve/main/text_encoders/clip_g.safetensors|text_encoders"
+ALL_DOWNLOADS[CLIP_L]="https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/resolve/main/text_encoders/clip_l.safetensors|text_encoders"
 ALL_DOWNLOADS[UMT5]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors|text_encoders"
 ALL_DOWNLOADS[WAN_LORA_RELIGHT]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_animate_14B_relight_lora_bf16.safetensors|loras"
 ALL_DOWNLOADS[WAN_LORA_I2V_HIGH]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors|loras"
@@ -48,6 +51,11 @@ ALL_DOWNLOADS[VITPOSE_L]="https://huggingface.co/JunkyByte/easy_ViTPose/resolve/
 ALL_DOWNLOADS[YOLOV10M]="https://huggingface.co/Wan-AI/Wan2.2-Animate-14B/resolve/main/process_checkpoint/det/yolov10m.onnx|detection"
 ALL_DOWNLOADS[UPSCALER_ESRGAN_X2]="https://huggingface.co/dtarnow/UPscaler/resolve/main/RealESRGAN_x2plus.pth|upscale_models"
 ALL_DOWNLOADS[UPSCALER_NOMOS_ESRGAN_X2]="https://huggingface.co/Kyca/KycasFiles/resolve/main/2xNomosUni_esrgan_multijpg.pth|upscale_models"
+ALL_DOWNLOADS[UPSCALER_NMKD_SIAX_X4]="https://huggingface.co/gemasai/4x_NMKD-Siax_200k/resolve/main/4x_NMKD-Siax_200k.pth|upscale_models"
+ALL_DOWNLOADS[ip-adapter-faceid-plusv2_sdxl]="https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sdxl.bin|ipadapter"
+ALL_DOWNLOADS[ip-adapter-faceid-plusv2_sdxl_lora]="https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sdxl_lora.safetensors|loras"
+
+
 
 
 # --- 2. DEFINIEER HIER JE GROEPEN ---
@@ -58,6 +66,8 @@ GROUP_SD3_5=(
     "SD3_5_CHECKPOINT"
     "T5"
     "SD3_5_VAE"
+    "CLIP_L"
+    "CLIP_G"
 )
 
 # Groep 2: FLUX (Specifiek)
@@ -80,6 +90,7 @@ GROUP_WAN_I2V=(
 GROUP_UPSCALER=(
     "UPSCALER_ESRGAN_X2"
     "UPSCALER_NOMOS_ESRGAN_X2"
+    "UPSCALER_NMKD_SIAX_X4"
 )
 
 # Groep 5: Wan Animate
@@ -96,6 +107,11 @@ GROUP_WAN_ANIMATE=(
 
 # icm IPadapters
 GROUP_STABLE_YOGI=(
+ )
+
+ GROUP_IP_ADPATER=(
+   "ip-adapter-faceid-plusv2_sdxl"
+   "ip-adapter-faceid-plusv2_sdxl_lora"
  )
 
 
@@ -168,6 +184,8 @@ function show_menu() {
     echo "  3) Wan 2.2 I2V "
     echo "  4) Upscalers"
     echo "  5) Wan 2.2 Animate"
+    echo "  6) Stable Yogi Realism"
+    echo "  7) IP Adapter dinges"
     echo
     echo "  q) Stoppen (Quit)"
     echo "-------------------------------------"
