@@ -7,7 +7,7 @@ if [ -z "$MIJN_SECRET" ]; then
 fi
 echo "Het ontvangen (deels verborgen) secret begint met: ${MIJN_SECRET:0:4}..."
 
-mkdirk -p /app
+mkdir -p /app
 cd /app
 git clone https://github.com/comfyanonymous/ComfyUI.git
 cd ComfyUI
