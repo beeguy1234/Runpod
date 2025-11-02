@@ -2,6 +2,12 @@
 
 # --- CONFIGURATIE ---
 
+if [ -z "$(command -v aria2c)" ]; then
+  echo "aria2 niet gevonden. Bezig met installeren..."
+  apt-get update
+  apt-get -y install aria2
+  fi
+
 # Controleer of de secret is meegegeven
 if [ -z "$MIJN_SECRET" ]; then
   echo "Fout: De variabele MIJN_SECRET is niet ingesteld."
