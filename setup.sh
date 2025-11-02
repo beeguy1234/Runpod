@@ -13,10 +13,10 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 
 # Install additional custom nodes
  CUSTOM_NODES=(
-  "https://github.com/ltdrdata/ComfyUI-Manager.git"
-  "https://github.com/kijai/ComfyUI-KJNodes"
-  "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git"
-  "https://github.com/yolain/ComfyUI-Easy-Use"
+  	"https://github.com/ltdrdata/ComfyUI-Manager.git"
+  	"https://github.com/kijai/ComfyUI-KJNodes"
+  	"https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git"
+  	"https://github.com/yolain/ComfyUI-Easy-Use"
 	"https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
 	"https://github.com/Fannovel16/comfyui_controlnet_aux"
   )
@@ -38,8 +38,9 @@ source venv/bin/activate
 pip install -U pip
 pip install uv
 uv pip install --no-cache -r requirements.txt
-uv pip install --no-cache torch torchvision torchaudio
+uv pip install --no-cache torch torchvision
 uv pip install --no-cache GitPython numpy pillow opencv-python  # Common dependencies
+uv pip install pip install onnx onnxruntime-gpu
 #uv pip install sageattention==2.2.0 --no-build-isolation
 
 # Install dependencies for all custom nodes
