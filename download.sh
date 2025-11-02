@@ -80,7 +80,7 @@ GROUP_UPSCALER=(
     "UPSCALER_ESRGAN_X2"
 )
 
-# Groep 5: ALLES
+# Groep 5: Wan Animate
 GROUP_WAN_ANIMATE=(
     "UMT5"
     "WAN_DIFFMOD_ANIMATE"
@@ -161,8 +161,7 @@ function show_menu() {
     echo "  2) FLUX "
     echo "  3) Wan 2.2 I2V "
     echo "  4) Upscalers"
-    echo
-    echo "  5) ALLES downloaden"
+    echo "  5) Wan 2.2 Animate"
     echo
     echo "  q) Stoppen (Quit)"
     echo "-------------------------------------"
@@ -187,7 +186,7 @@ while true; do
             download_files "${GROUP_UPSCALER[@]}"
             ;;
         5)
-            download_files "${GROUP_ALL[@]}"
+            download_files "${GROUP_WAN_ANIMATE[@]}"
             ;;
         q|Q)
             echo "Script stoppen."
