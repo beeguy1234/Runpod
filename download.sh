@@ -155,7 +155,7 @@ function show_menu() {
     echo
     echo "  q) Stoppen (Quit)"
     echo "-------------------------------------"
-    read -p "Maak je keuze (1-5, q): " choice
+    read -p "Maak je keuze (1-5, q): " choice </dev/tty
 }
 
 # Main script loop
@@ -192,9 +192,9 @@ while true; do
             echo "Ongeldige keuze '$choice'. Probeer opnieuw."
             ;;
     esac
-    echo
-    read -p "Druk op [Enter] om terug te keren naar het menu..."
-    clear # Maak het scherm leeg voor het menu opnieuw toont
+        echo "Ongeldige keuze '$choice'. Probeer opnieuw."
+        sleep 2 # Geef tijd om de fout te lezen
+        ;;
 done
 
 echo "Klaar."
