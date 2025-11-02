@@ -76,24 +76,4 @@ apt-get -y install aria2
 cd /app/ComfyUI
 nohup python main.py --listen --port 8188 &
 
-declare -A DOWNLOADS
-DOWNLOADS=(
-
- )
-
-i=0
-total_downloads=${#DOWNLOADS[@]}
-for url in "${!DOWNLOADS[@]}"; do
-    ((i++))
-    dest_dir="/app/ComfyUI/models/${DOWNLOADS[$url]}"
-    filename=$(basename "$url")
-    mkdir -p "$dest_dir"
-    aria2c -c -x 16 -s 16 --header "Authorization: Bearer ${MIJN_SECRET}" $url -d $dest_dir -o $filename
-    # Controleer de exit-status van het commando
-    if [ $? -eq 0 ]; then
-        echo "Download van $filename voltooid."
-    else
-        echo "Waarschuwing: Download van $filename is mislukt."
-    fi
-done
- 
+curl -sL https://raw.githubusercontent.com/beeguy1234/Runpod/main/download.sh | bash
