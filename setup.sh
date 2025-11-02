@@ -23,9 +23,9 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 
  for repo in "${CUSTOM_NODES[@]}"; do
      repo_name=$(basename "$repo")
-     if [ ! -d "$COMFYUI_DIR/custom_nodes/$repo_name" ]; then
+     if [ ! -d "/app/comfyUI/custom_nodes/$repo_name" ]; then
          echo "Downloading $repo_name..."
-         cd "$COMFYUI_DIR/custom_nodes"
+         cd "/app/comfyUI/custom_nodes"
          git clone "$repo"
      fi
  done
@@ -75,4 +75,4 @@ apt-get -y install aria2
 cd /app/ComfyUI
 python main.py --listen --port 8188 &
 
-aria2c -c -x 16 -s 16 --header="Authorization: Bearer ${MIJN_SECRET}" https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors -d /app/ComfyUI/models/checkpoints -o sd3.5_large.safetensors
+# aria2c -c -x 16 -s 16 --header="Authorization: Bearer ${MIJN_SECRET}" https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors -d /app/ComfyUI/models/checkpoints -o sd3.5_large.safetensors
