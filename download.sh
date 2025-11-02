@@ -190,11 +190,11 @@ while true; do
             ;;
         *)
             echo "Ongeldige keuze '$choice'. Probeer opnieuw."
+            sleep 2 # Geef tijd om de fout te lezen
             ;;
     esac
-        echo "Ongeldige keuze '$choice'. Probeer opnieuw."
-        sleep 2 # Geef tijd om de fout te lezen
-        ;;
+    echo
+    echo "----------------------------------------------------"
 done
 
 echo "Klaar."
