@@ -46,7 +46,7 @@ uv pip install --no-cache GitPython numpy pillow opencv-python  # Common depende
         for node_dir in */; do
             if [ -d "$node_dir" ]; then
                 echo "Checking dependencies for $node_dir..."
-                cd "app/custom_nodes/$node_dir"
+                cd "app/ComfyUI/custom_nodes/$node_dir"
                 
                 # Check for requirements.txt
                 if [ -f "requirements.txt" ]; then
