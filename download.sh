@@ -23,21 +23,17 @@ ARIA2_HEADER="Authorization: Bearer ${MIJN_SECRET}"
 # (De bestemmingsmap is relatief aan $BASE_MODEL_DIR)
 
 declare -A ALL_DOWNLOADS
-# SD 3.5 & FLUX Gerelateerd
-ALL_DOWNLOADS[SD3_5_CHECKPOINT]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors|checkpoints"
-ALL_DOWNLOADS[SD3_5_UMT5]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors|text_encoders"
-ALL_DOWNLOADS[SD3_5_VAE]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/vae/diffusion_pytorch_model.safetensors|vae"
-ALL_DOWNLOADS[FLUX_T5]="https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors|text_encoders"
 
-# Wan 2.2 I2V Gerelateerd
-ALL_DOWNLOADS[WAN_LORA_ANIMATE]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_animate_14B_relight_lora_bf16.safetensors|loras"
+ALL_DOWNLOADS[SD3_5_CHECKPOINT]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors|checkpoints"
+ALL_DOWNLOADS[SD3_5_VAE]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/vae/diffusion_pytorch_model.safetensors|vae"
+ALL_DOWNLOADS[T5]="https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors|text_encoders"
+ALL_DOWNLOADS[UMT5]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors|text_encoders"
+ALL_DOWNLOADS[WAN_LORA_RELIGHT]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_animate_14B_relight_lora_bf16.safetensors|loras"
 ALL_DOWNLOADS[WAN_LORA_I2V_HIGH]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors|loras"
 ALL_DOWNLOADS[WAN_LORA_I2V_LOW]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors|loras"
 ALL_DOWNLOADS[WAN_LORA_LIGHTX]="https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors|loras"
 ALL_DOWNLOADS[WAN_VAE_2_1]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors|vae"
 ALL_DOWNLOADS[WAN_VAE_2_2]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan2.2_vae.safetensors|vae"
-
-# Algemeen / Upscalers
 ALL_DOWNLOADS[UPSCALER_ESRGAN_X2]="https://huggingface.co/dtarnow/UPscaler/resolve/main/RealESRGAN_x2plus.pth|upscale_models"
 
 
@@ -47,20 +43,20 @@ ALL_DOWNLOADS[UPSCALER_ESRGAN_X2]="https://huggingface.co/dtarnow/UPscaler/resol
 # Groep 1: SD 3.5 Large (Basis)
 GROUP_SD3_5=(
     "SD3_5_CHECKPOINT"
-    "SD3_5_UMT5"
+    "T5"
     "SD3_5_VAE"
 )
 
 # Groep 2: FLUX (Specifiek)
 GROUP_FLUX=(
-    "FLUX_T5"
-    # FLUX heeft waarschijnlijk ook de SD3.5 VAE nodig. 
-    # Voeg "SD3_5_VAE" hier toe als je dat wilt, of kies optie 1 en 2 in het menu.
+    "T5"
+    "SD3_5_VAE"
 )
 
 # Groep 3: Wan 2.2 I2V (Alles voor Wan)
-GROUP_WAN=(
-    "WAN_LORA_ANIMATE"
+GROUP_WAN_I2V=(
+    "UMT5"
+    "WAN_LORA_RELIGHT"
     "WAN_LORA_I2V_HIGH"
     "WAN_LORA_I2V_LOW"
     "WAN_LORA_LIGHTX"
@@ -77,7 +73,7 @@ GROUP_UPSCALER=(
 GROUP_ALL=(
     "${GROUP_SD3_5[@]}"
     "${GROUP_FLUX[@]}"
-    "${GROUP_WAN[@]}"
+    "${GROUP_WAN_I2V[@]}"
     "${GROUP_UPSCALER[@]}"
 )
 
@@ -146,10 +142,10 @@ function show_menu() {
     echo "====================================="
     echo "Kies welke modelsets je wilt downloaden:"
     echo
-    echo "  1) SD 3.5 Large (Checkpoint, UMT5, VAE)"
-    echo "  2) FLUX (Specifieke t5xxl text encoder)"
-    echo "  3) Wan 2.2 I2V (Alle LoRAs en VAEs)"
-    echo "  4) Upscaler (RealESRGAN x2)"
+    echo "  1) SD 3.5 Large"
+    echo "  2) FLUX "
+    echo "  3) Wan 2.2 I2V "
+    echo "  4) Upscalers"
     echo
     echo "  5) ALLES downloaden"
     echo
@@ -164,24 +160,18 @@ while true; do
     
     case $choice in
         1)
-            echo "Gekozen: 1) SD 3.5 Large"
-            # Pass de inhoud van de array door aan de functie
             download_files "${GROUP_SD3_5[@]}"
             ;;
         2)
-            echo "Gekozen: 2) FLUX"
             download_files "${GROUP_FLUX[@]}"
             ;;
         3)
-            echo "Gekozen: 3) Wan 2.2 I2V"
-            download_files "${GROUP_WAN[@]}"
+            download_files "${GROUP_WAN_I2V[@]}"
             ;;
         4)
-            echo "Gekozen: 4) Upscaler"
             download_files "${GROUP_UPSCALER[@]}"
             ;;
         5)
-            echo "Gekozen: 5) ALLES"
             download_files "${GROUP_ALL[@]}"
             ;;
         q|Q)
