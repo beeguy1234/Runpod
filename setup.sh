@@ -99,7 +99,7 @@ for url in "${!DOWNLOADS[@]}"; do
     dest_dir="/app/ComfyUI/models/${DOWNLOADS[$url]}"
     filename=$(basename "$url")
     mkdir -p "$dest_dir"
-    aria2c $ARIA2_OPTS $ARIA2_HEADER "$url" -d "$dest_dir" -o "$filename"
+    aria2c -c -x 16 -s 16 --header "Authorization: Bearer ${MIJN_SECRET}" $url -d $dest_dir -o $filename
     # Controleer de exit-status van het commando
     if [ $? -eq 0 ]; then
         echo "Download van $filename voltooid."
