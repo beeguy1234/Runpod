@@ -20,6 +20,7 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 	"https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
 	"https://github.com/Fannovel16/comfyui_controlnet_aux"
   )
+  CUSTOM_NODES=()
 
  for repo in "${CUSTOM_NODES[@]}"; do
      repo_name=$(basename "$repo")
