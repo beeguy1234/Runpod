@@ -89,7 +89,7 @@ GROUP_WAN_ANIMATE=(
     "WAN_VAE_2_1"
     "VITPOSE_L"
     "YOLOV10M"
-    "SEGMENTATIONé
+    "SEGMENTATION"
 )
 
 
