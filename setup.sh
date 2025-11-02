@@ -74,7 +74,7 @@ apt-get update
 apt-get -y install aria2
 
 cd /app/ComfyUI
-python main.py --listen --port 8188  --use-sage-attention &
+python main.py --listen --port 8188 &
 
 declare -A DOWNLOADS
 DOWNLOADS=(
