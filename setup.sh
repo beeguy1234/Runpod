@@ -13,7 +13,11 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 cd ComfyUI
 python -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt
+pip install -U pip
+pip install uv
+uv pip install --no-cache -r requirements.txt
+uv pip install --no-cache torch torchvision torchaudio
+uv pip install --no-cache GitPython numpy pillow opencv-python  # Common dependencies
 
 apt-get updates
 apt-get -y install aria2
