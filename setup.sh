@@ -90,7 +90,7 @@ DOWNLOADS=(
 	["https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors"]="checkpoints"
  )
 ARIA2_OPTS="-c -x 16 -s 16"
-ARIA2_HEADER="--header=Authorization: Bearer ${MIJN_SECRET}"
+ARIA2_HEADER="--header Authorization: Bearer ${MIJN_SECRET}"
 
 i=0
 total_downloads=${#DOWNLOADS[@]}
