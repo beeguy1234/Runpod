@@ -69,10 +69,15 @@ ALL_DOWNLOADS[YOLOV10M]="https://huggingface.co/Wan-AI/Wan2.2-Animate-14B/resolv
 ALL_DOWNLOADS[UPSCALER_ESRGAN_X2]="https://huggingface.co/dtarnow/UPscaler/resolve/main/RealESRGAN_x2plus.pth|upscale_models"
 ALL_DOWNLOADS[UPSCALER_NOMOS_ESRGAN_X2]="https://huggingface.co/Kyca/KycasFiles/resolve/main/2xNomosUni_esrgan_multijpg.pth|upscale_models"
 ALL_DOWNLOADS[UPSCALER_NMKD_SIAX_X4]="https://huggingface.co/gemasai/4x_NMKD-Siax_200k/resolve/main/4x_NMKD-Siax_200k.pth|upscale_models"
+ALL_DOWNLOADS[ip-adapter-faceid_sdxl_bin]="https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid_sdxl.bin|ipadapter"
 ALL_DOWNLOADS[ip-adapter-faceid-plusv2_sdxl]="https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sdxl.bin|ipadapter"
 ALL_DOWNLOADS[ip-adapter-faceid-plusv2_sdxl_lora]="https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sdxl_lora.safetensors|loras"
 ALL_DOWNLOADS[ip-adapter-faceid_sdxl_lora]="https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid_sdxl_lora.safetensors|loras"
 ALL_DOWNLOADS[ip-adapter-faceid-portrait_sdxl]="https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-portrait_sdxl.bin|ipadapter"
+ALL_DOWNLOADS[ip-adapter-faceid-portrait_sdxl_unnorm_bin]="https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-portrait_sdxl_unnorm.bin|ipadapter"
+ALL_DOWNLOADS[CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors]="https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/image_encoder/model.safetensors|clip_vision|CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors"
+ALL_DOWNLOADS[CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors]="https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors|clip_vision|CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
+
 
 
 # --- 2. DEFINIEER HIER JE GROEPEN ---
@@ -130,8 +135,13 @@ GROUP_STABLE_YOGI=(
  GROUP_IP_ADAPTER=(
    "ip-adapter-faceid-plusv2_sdxl"
    "ip-adapter-faceid-plusv2_sdxl_lora"
+   "ip-adapter-faceid_sdxl_lora"
    "ip-adapter-faceid-portrait_sdxl"
-   "ip-adapter-faceid-portrait_sdxl"
+   "ip-adapter-faceid_sdxl_bin"
+   "ip-adapter-faceid-portrait_sdxl_unnorm_bin"
+   "CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors"
+   "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
+   
  )
 
 
