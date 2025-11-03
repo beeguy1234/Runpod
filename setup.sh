@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Controleer of de secret is meegegeven
+# Controleer of de secret is meegegeven ..
 if [ -z "$MIJN_SECRET" ]; then
   echo "Fout: De variabele MIJN_SECRET is niet ingesteld."
   exit 1
