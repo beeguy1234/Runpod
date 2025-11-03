@@ -20,6 +20,8 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 	"https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
 	"https://github.com/Fannovel16/comfyui_controlnet_aux"
 	"https://github.com/cubiq/ComfyUI_IPAdapter_plus"
+	"https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+	"https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
 	)
 
  for repo in "${CUSTOM_NODES[@]}"; do
