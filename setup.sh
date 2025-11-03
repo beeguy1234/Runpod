@@ -40,7 +40,7 @@ pip install uv
 uv pip install --no-cache -r requirements.txt
 uv pip install --no-cache GitPython numpy pillow opencv-python  # Common dependencies
 uv pip install --no-cache triton onnx onnxruntime-gpu
-#uv pip install --no-cache sageattention --no-build-isolation
+uv pip install --no-cache sageattention==1.0.6 --no-build-isolation
 
 # Install dependencies for all custom nodes
         cd "/app/ComfyUI/custom_nodes"
@@ -74,6 +74,6 @@ apt-get update
 apt-get -y install aria2
 
 cd /app/ComfyUI
-nohup python main.py --listen --port 8188 &
+nohup python main.py --listen --port 8188 --use-sage-attention &
 
 curl -sL https://raw.githubusercontent.com/beeguy1234/Runpod/main/download.sh | bash
