@@ -113,6 +113,7 @@ GROUP_STABLE_YOGI=(
    "ip-adapter-faceid-plusv2_sdxl"
    "ip-adapter-faceid-plusv2_sdxl_lora"
    "ip-adapter-faceid-portrait_sdxl"
+   "ip-adapter-faceid-portrait_sdxl"
  )
 
 
@@ -212,6 +213,12 @@ while true; do
             ;;
         5)
             download_files "${GROUP_WAN_ANIMATE[@]}"
+            ;;
+        6)
+            download_files "${GROUP_STABLE_YOGI[@]}"
+            ;;
+        7)
+            download_files "${GROUP_IP_ADPATER[@]}"
             ;;
         q|Q)
             echo "Script stoppen."
