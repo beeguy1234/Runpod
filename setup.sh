@@ -13,13 +13,14 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 
 # Install additional custom nodes
  CUSTOM_NODES=(
-  	"https://github.com/ltdrdata/ComfyUI-Manager.git"
+  	"https://github.com/ltdrdata/ComfyUI-Manager"
   	"https://github.com/kijai/ComfyUI-KJNodes"
-  	"https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git"
+  	"https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
   	"https://github.com/yolain/ComfyUI-Easy-Use"
 	"https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
 	"https://github.com/Fannovel16/comfyui_controlnet_aux"
-  )
+	"https://github.com/cubiq/ComfyUI_IPAdapter_plus"
+	)
 
  for repo in "${CUSTOM_NODES[@]}"; do
      repo_name=$(basename "$repo")
@@ -40,6 +41,8 @@ pip install uv
 uv pip install --no-cache -r requirements.txt
 uv pip install --no-cache GitPython numpy pillow opencv-python  # Common dependencies
 uv pip install --no-cache triton onnx onnxruntime-gpu
+# insightface voor ipadapter :
+uv pip install --no-cache insightface
 uv pip install --no-cache sageattention==1.0.6
 
 # Install dependencies for all custom nodes
