@@ -8,20 +8,32 @@ if [ -z "$(command -v aria2c)" ]; then
   apt-get -y install aria2
   fi
 
-# Controleer of de secret is meegegeven
+# Controleer Hugging Face Secret
 if [ -z "$MIJN_SECRET" ]; then
-  echo "Fout: De variabele MIJN_SECRET is niet ingesteld."
+  echo "Fout: De variabele MIJN_SECRET (voor Hugging Face) is niet ingesteld."
   echo "Stel deze in voordat je het script uitvoert:"
   echo "export MIJN_SECRET='jouw_huggingface_token'"
   exit 1
+else
+  echo "Secret voor Hugging Face gedetecteerd."
 fi
-echo "Secret voor huggingface gedetecteerd."
+
+# Controleer Civitai Secret
+if [ -z "$CIVITAI_SECRET" ]; then
+  echo "Fout: De variabele CIVITAI_SECRET is niet ingesteld."
+  echo "Stel deze in voordat je het script uitvoert:"
+  echo "export CIVITAI_SECRET='jouw_civitai_api_key'"
+  exit 1
+else
+  echo "Secret voor Civitai gedetecteerd."
+fi
 
 # Basisinstellingen
 BASE_MODEL_DIR="/app/ComfyUI/models"
 ARIA2_OPTS="-c -x 16 -s 16"
-# Wees zeker dat de header-waarde als één string wordt doorgegeven
-ARIA2_HEADER="Authorization: Bearer ${MIJN_SECRET}"
+# Definieer de headers voor de verschillende services
+ARIA2_HEADER_HF="Authorization: Bearer ${MIJN_SECRET}"
+ARIA2_HEADER_CIVITAI="Authorization: Bearer ${CIVITAI_SECRET}"
 
 # --- 1. MASTER DOWNLOAD LIJST ---
 # Definieer hier alle mogelijke downloads.
