@@ -4,6 +4,7 @@
 
 if [ -z "$(command -v aria2c)" ]; then
   echo "aria2 niet gevonden. Bezig met installeren..."
+  # Aanname dat dit in een omgeving draait waar apt-get beschikbaar is
   apt-get update
   apt-get -y install aria2
   fi
@@ -37,13 +38,16 @@ ARIA2_HEADER_CIVITAI="Authorization: Bearer ${CIVITAI_SECRET}"
 
 # --- 1. MASTER DOWNLOAD LIJST ---
 # Definieer hier alle mogelijke downloads.
-# Formaat: [key]="URL|bestemmingsmap"
+# NIEUW FORMAAT: [key]="URL|bestemmingsmap|optionele_bestandsnaam"
 # (De bestemmingsmap is relatief aan $BASE_MODEL_DIR)
 
 declare -A ALL_DOWNLOADS
 
+# Voorbeeld met de NIEUWE optie (derde parameter):
+ALL_DOWNLOADS[Realism_SDXL_By-Stable_Yogi_V7_BF16]="https://civitai.com/api/download/models/1928565?type=Model&format=SafeTensor&size=pruned&fp=fp16|checkpoints|Realism_SDXL_By-Stable_Yogi_V7_BF16.safetensors"
+
+# Voorbeelden met de OUDE (default) werking:
 ALL_DOWNLOADS[SD3_5_CHECKPOINT]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors|checkpoints"
-ALL_DOWNLOADS[Realism_SDXL_By-Stable_Yogi_V7_BF16]="https://civitai.com/api/download/models/1928565?type=Model&format=SafeTensor&size=pruned&fp=fp16|checkpoints"
 ALL_DOWNLOADS[SD3_5_VAE]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/vae/diffusion_pytorch_model.safetensors|vae"
 ALL_DOWNLOADS[FLUX_DEV]="https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev.safetensors|checkpoints"
 ALL_DOWNLOADS[T5]="https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors|text_encoders"
@@ -131,7 +135,7 @@ GROUP_STABLE_YOGI=(
  )
 
 
-# --- 3. DOWNLOAD FUNCTIE ---
+# --- 3. DOWNLOAD FUNCTIE (AANGEPAST) ---
 # Deze functie verwerkt het downloaden.
 # Gebruik: download_files "key1" "key2" "key3" ...
 # -----------------------------
@@ -157,29 +161,64 @@ download_files() {
             continue
         fi
         
-        # Splits de string op |
+        # --- WIJZIGING START ---
+        # Splits de string op | in 3 delen
         local url=$(echo "$value" | cut -d'|' -f1)
         local dest_folder=$(echo "$value" | cut -d'|' -f2)
+        local custom_filename=$(echo "$value" | cut -d'|' -f3) # Nieuwe 3e parameter
         
         local dest_dir="$BASE_MODEL_DIR/$dest_folder"
-        local filename=$(basename "$url")
+        
+        local filename=""
+        if [ -n "$custom_filename" ]; then
+            # 1. Gebruik de custom naam als deze is opgegeven
+            filename="$custom_filename"
+        else
+            # 2. Geen custom naam, probeer de naam uit de URL te halen
+            # Verwijder eerst query-parameters (?...)
+            local url_no_query=$(echo "$url" | cut -d'?' -f1)
+            filename=$(basename "$url_no_query")
+            
+            # 3. Fallback: Als de bestandsnaam geen extensie heeft (zoals bij Civitai's /models/12345)
+            #    gebruik dan de KEY als bestandsnaam, met een .safetensors fallback.
+            if ! [[ "$filename" == *.* ]]; then
+                 echo "($i/$total) [INFO] Geen bestandsnaam in URL. Gebruikt key '$key.safetensors' als fallback."
+                 filename="$key.safetensors"
+            fi
+        fi
+        
         local dest_file="$dest_dir/$filename"
         
         mkdir -p "$dest_dir"
         
+        # --- BUGFIX START: Selecteer de juiste header ---
+        local ARIA2_HEADER_OPT="" # Maak een lege optie-string
+        if [[ "$url" == *"huggingface.co"* ]]; then
+            ARIA2_HEADER_OPT="--header=\"$ARIA2_HEADER_HF\""
+        elif [[ "$url" == *"civitai.com"* ]]; then
+            ARIA2_HEADER_OPT="--header=\"$ARIA2_HEADER_CIVITAI\""
+        fi
+        # --- BUGFIX EINDE ---
+
         # Check of bestand al bestaat
         if [ -f "$dest_file" ]; then
             echo "($i/$total) [SKIPPED] $filename bestaat al in $dest_folder."
         else
             echo "($i/$total) [DOWNLOADING] Start download: $filename -> $dest_folder"
-            aria2c $ARIA2_OPTS --header="$ARIA2_HEADER" "$url" -d "$dest_dir" -o "$filename"
+            
+            # Gebruik 'eval' om de string met opties correct te parsen, inclusief de header
+            # $ARIA2_HEADER_OPT is leeg als er geen match is, of bevat de --header... string
+            eval "aria2c $ARIA2_OPTS $ARIA2_HEADER_OPT \"$url\" -d \"$dest_dir\" -o \"$filename\""
             
             if [ $? -eq 0 ]; then
                 echo "($i/$total) [COMPLETED] Download van $filename voltooid."
             else
                 echo "($i/$total) [FAILED] Waarschuwing: Download van $filename is mislukt."
+                # Optioneel: verwijder het mislukte (incomplete) bestand
+                # rm -f "$dest_file" 
             fi
         fi
+        # --- WIJZIGING EINDE ---
     done
     
     echo "--- Downloadtaak voltooid ---"
@@ -188,6 +227,7 @@ download_files() {
 
 # --- 4. HOOFDMENU LOGICA ---
 # Toont het menu en reageert op input.
+# (GEEN WIJZIGINGEN HIER)
 # -------------------------
 function show_menu() {
     echo "====================================="
@@ -205,7 +245,8 @@ function show_menu() {
     echo
     echo "  q) Stoppen (Quit)"
     echo "-------------------------------------"
-    read -p "Maak je keuze (1-5, q): " choice </dev/tty
+    # Zorg ervoor dat 'read' leest van de tty, zelfs als script wordt gepiped
+    read -p "Maak je keuze (1-7, q): " choice </dev/tty
 }
 
 # Main script loop
