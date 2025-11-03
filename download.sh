@@ -54,6 +54,8 @@ ALL_DOWNLOADS[UPSCALER_NOMOS_ESRGAN_X2]="https://huggingface.co/Kyca/KycasFiles/
 ALL_DOWNLOADS[UPSCALER_NMKD_SIAX_X4]="https://huggingface.co/gemasai/4x_NMKD-Siax_200k/resolve/main/4x_NMKD-Siax_200k.pth|upscale_models"
 ALL_DOWNLOADS[ip-adapter-faceid-plusv2_sdxl]="https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sdxl.bin|ipadapter"
 ALL_DOWNLOADS[ip-adapter-faceid-plusv2_sdxl_lora]="https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sdxl_lora.safetensors|loras"
+ALL_DOWNLOADS[ip-adapter-faceid-portrait_sdxl]="https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-portrait_sdxl.bin|ipadapter"
+
 
 
 
@@ -112,6 +114,7 @@ GROUP_STABLE_YOGI=(
  GROUP_IP_ADPATER=(
    "ip-adapter-faceid-plusv2_sdxl"
    "ip-adapter-faceid-plusv2_sdxl_lora"
+   "ip-adapter-faceid-portrait_sdxl"
  )
 
 
