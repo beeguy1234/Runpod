@@ -31,6 +31,7 @@ ARIA2_HEADER="Authorization: Bearer ${MIJN_SECRET}"
 declare -A ALL_DOWNLOADS
 
 ALL_DOWNLOADS[SD3_5_CHECKPOINT]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors|checkpoints"
+ALL_DOWNLOADS[Realism_SDXL_By-Stable_Yogi_V7_BF16]="https://civitai.com/api/download/models/1928565?type=Model&format=SafeTensor&size=pruned&fp=fp16|checkpoints"
 ALL_DOWNLOADS[SD3_5_VAE]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/vae/diffusion_pytorch_model.safetensors|vae"
 ALL_DOWNLOADS[FLUX_DEV]="https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev.safetensors|checkpoints"
 ALL_DOWNLOADS[T5]="https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors|text_encoders"
@@ -107,9 +108,10 @@ GROUP_WAN_ANIMATE=(
 
 # icm IPadapters
 GROUP_STABLE_YOGI=(
+ "Realism_SDXL_By-Stable_Yogi_V7_BF16"
  )
 
- GROUP_IP_ADPATER=(
+ GROUP_IP_ADAPTER=(
    "ip-adapter-faceid-plusv2_sdxl"
    "ip-adapter-faceid-plusv2_sdxl_lora"
    "ip-adapter-faceid-portrait_sdxl"
@@ -182,11 +184,11 @@ function show_menu() {
     echo "Kies welke modelsets je wilt downloaden:"
     echo
     echo "  1) SD 3.5 Large"
-    echo "  2) FLUX "
-    echo "  3) Wan 2.2 I2V "
+    echo "  2) FLUX"
+    echo "  3) Wan 2.2 I2V"
     echo "  4) Upscalers"
     echo "  5) Wan 2.2 Animate"
-    echo "  6) Stable Yogi Realism"
+    echo "  6) Stable Yogi Realism met IP Adapter dinges"
     echo "  7) IP Adapter dinges"
     echo
     echo "  q) Stoppen (Quit)"
@@ -216,9 +218,10 @@ while true; do
             ;;
         6)
             download_files "${GROUP_STABLE_YOGI[@]}"
+            download_files "${GROUP_IP_ADAPTER[@]}"
             ;;
         7)
-            download_files "${GROUP_IP_ADPATER[@]}"
+            download_files "${GROUP_IP_ADAPTER[@]}"
             ;;
         q|Q)
             echo "Script stoppen."
