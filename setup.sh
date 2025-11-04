@@ -34,7 +34,9 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
      fi
  done
 
-
+# uitzonderlijk deze node moet blijkbaar hernoemd worden :
+cd /app/ComfyUI/custom_nodes
+mv ComfyUI-Impact-Pack comfyui-impact-pack
 
 cd /app/ComfyUI
 python -m venv venv
