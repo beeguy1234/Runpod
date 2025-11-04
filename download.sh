@@ -76,6 +76,10 @@ ALL_DOWNLOADS[ip-adapter-faceid-plusv2_sdxl_lora]="https://huggingface.co/h94/IP
 ALL_DOWNLOADS[ip-adapter-faceid_sdxl_lora]="https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid_sdxl_lora.safetensors|loras"
 ALL_DOWNLOADS[ip-adapter-faceid-portrait_sdxl]="https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-portrait_sdxl.bin|ipadapter"
 ALL_DOWNLOADS[ip-adapter-faceid-portrait_sdxl_unnorm_bin]="https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-portrait_sdxl_unnorm.bin|ipadapter"
+ALL_DOWNLOADS[ip-adapter_sdxl_vit-h]="https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl_vit-h.safetensors|ipadapter"
+ALL_DOWNLOADS[ip-adapter-plus_sdxl_vit-h]="https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors|ipadapter"
+ALL_DOWNLOADS[ip-adapter-plus-face_sdxl_vit-h]="https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus-face_sdxl_vit-h.safetensors|ipadapter"
+ALL_DOWNLOADS[ip-adapter_sdxl]="https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl.safetensors|ipadapter"
 ALL_DOWNLOADS[CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors]="https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/image_encoder/model.safetensors|clip_vision|CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors"
 ALL_DOWNLOADS[CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors]="https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors|clip_vision|CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
 
@@ -140,9 +144,12 @@ GROUP_STABLE_YOGI=(
     "ip-adapter-faceid-portrait_sdxl"
     "ip-adapter-faceid_sdxl_bin"
     "ip-adapter-faceid-portrait_sdxl_unnorm_bin"
+    "ip-adapter_sdxl_vit-h"
+    "ip-adapter-plus_sdxl_vit-h"
+    "ip-adapter-plus-face_sdxl_vit-h"
+    "ip-adapter_sdxl"
     "CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors"
-    "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
-    
+    "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"    
  )
 
 
