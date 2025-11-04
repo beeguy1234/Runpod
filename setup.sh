@@ -60,7 +60,8 @@ uv pip install --no-cache sageattention==1.0.6
                 # Check for requirements.txt
                 if [ -f "requirements.txt" ]; then
                     echo "Installing requirements.txt for $node_dir"
-                    grep -vE '^(torch|torchvision|torchaudio)' requirements.txt uv pip install --no-cache -r -
+                    #grep -vE '^(torch|torchvision|torchaudio)' requirements.txt uv pip install --no-cache -r -
+					uv pip install --no-cache -r - requirements.txt
                 fi
                 
                 # Check for install.py
