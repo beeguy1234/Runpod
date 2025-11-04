@@ -297,8 +297,8 @@ while true; do
             download_files "${GROUP_WAN_ANIMATE[@]}"
             ;;
         6)
-            download_files "${GROUP_STABLE_YOGI[@]}"
             download_files "${GROUP_IP_ADAPTER[@]}"
+            download_files "${GROUP_STABLE_YOGI[@]}"
             ;;
         7)
             download_files "${GROUP_IP_ADAPTER[@]}"
