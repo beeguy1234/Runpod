@@ -39,7 +39,6 @@ cd /app/ComfyUI/custom_nodes
 mv ComfyUI-Impact-Pack comfyui-impact-pack
 
 cd /app/ComfyUI
-pip install -U pip
 pip install --no-cache -r requirements.txt
 pip install --no-cache GitPython numpy pillow opencv-python  # Common dependencies
 # pip install --no-cache triton onnx onnxruntime-gpu
