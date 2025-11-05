@@ -54,10 +54,8 @@ pip install --no-cache sageattention==1.0.6
 		# Start een subshell met (
 				(
 				echo "Checking dependencies for $node_dir..."
-				# Je kan dit ook simpeler schrijven, aangezien je al in de map staat:
 				cd "$node_dir"
-				echo "Changed directory to $(pwd)"
-				
+			
                 	# Check for requirements.txt
 					if [ -f "requirements.txt" ]; then
 					echo "Installing requirements.txt for $node_dir"
