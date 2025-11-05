@@ -51,9 +51,9 @@ pip install --no-cache sageattention==1.0.6
         echo "Current directory: $(pwd). Looking for custom nodes..."
 		for node_dir in */; do
 		echo "***** STARTING INSTALL $node_dir"
-		if [ -d "$node_dir" ]; then
-		        # Start een subshell met (
-            	(
+		if [ -d "$node_dir" ]; then	        
+		# Start een subshell met (
+				(
 				echo "Checking dependencies for $node_dir..."
 				# Je kan dit ook simpeler schrijven, aangezien je al in de map staat:
 				cd "$node_dir"
