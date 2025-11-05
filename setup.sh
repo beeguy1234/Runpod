@@ -47,36 +47,35 @@ pip install --no-cache insightface
 pip install --no-cache sageattention==1.0.6
 
 # Install dependencies for all custom nodes
-        cd "/app/ComfyUI/custom_nodes"
-        for node_dir in */; do
-		echo "***** STARTING INSTALL $node_dir"
-		if [ -d "$node_dir" ]; then	        
-		# Start een subshell met (
+        cd "/app/ComfyUI/custom_nodes"
+        for node_dir in */; do
+			echo "***** STARTING INSTALL $node_dir"
+            if [ -d "$node_dir" ]; then
 				(
-				echo "Checking dependencies for $node_dir..."
-				cd "$node_dir"
-			
-                	# Check for requirements.txt
-					if [ -f "requirements.txt" ]; then
-					echo "Installing requirements.txt for $node_dir"
-					pip install --no-cache -r requirements.txt
-                	fi
-                	
-                	# Check for install.py
-					if [ -f "install.py" ]; then
-					echo "Running install.py for $node_dir"
-					python install.py
-					fi
-                	
-                	# Check for setup.py
-     				if [ -f "setup.py" ]; then
-					echo "Running setup.py for $node_dir"
-					pip install --no-cache -e .
-					fi
-					) # Einde van de subshell. De CWD wordt nu hersteld.
-
-            fi
-        done
+                	echo "Checking dependencies for $node_dir..."
+                	cd "$node_dir"
+                
+                	# Check for requirements.txt
+                	if [ -f "requirements.txt" ]; then
+                   	 	echo "Installing requirements.txt for $node_dir"
+                    	#grep -vE '^(torch|torchvision|torchaudio)' requirements.txt pip install --no-cache -r -
+						pip install --no-cache -r requirements.txt
+                	fi
+                
+                	# Check for install.py
+                	if [ -f "install.py" ]; then
+                    	echo "Running install.py for $node_dir"
+                    	python install.py
+                	fi
+                
+                	# Check for setup.py
+                	if [ -f "setup.py" ]; then
+                    	echo "Running setup.py for $node_dir"
+                    	pip install --no-cache -e .
+                	fi
+				)
+            fi
+        done
 
 
 apt-get update
