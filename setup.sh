@@ -50,6 +50,7 @@ pip install --no-cache sageattention==1.0.6
 # Install dependencies for all custom nodes
         cd "/app/ComfyUI/custom_nodes"
         for node_dir in */; do
+			echo "***** STARTING INSTALL $node_dir"
             if [ -d "$node_dir" ]; then
                 echo "Checking dependencies for $node_dir..."
                 cd "/app/ComfyUI/custom_nodes/$node_dir"
