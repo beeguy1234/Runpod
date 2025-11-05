@@ -35,8 +35,8 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
  done
 
 # uitzonderlijk deze node moet blijkbaar hernoemd worden :
-cd /app/ComfyUI/custom_nodes
-mv ComfyUI-Impact-Pack comfyui-impact-pack
+#cd /app/ComfyUI/custom_nodes
+#mv ComfyUI-Impact-Pack comfyui-impact-pack
 
 cd /app/ComfyUI
 pip install --no-cache -r requirements.txt
@@ -58,8 +58,8 @@ pip install --no-cache sageattention==1.0.6
                 	# Check for requirements.txt
                 	if [ -f "requirements.txt" ]; then
                    	 	echo "Installing requirements.txt for $node_dir"
-                    	#grep -vE '^(torch|torchvision|torchaudio)' requirements.txt pip install --no-cache -r -
-						pip install --no-cache -r requirements.txt
+                    	grep -vE '^(torch|torchvision|torchaudio|facebookresearch/sam2)' requirements.txt pip install --no-cache -r -
+						#pip install --no-cache -r requirements.txt
                 	fi
                 
                 	# Check for install.py
