@@ -65,10 +65,10 @@ pip install --no-cache sageattention==1.0.6
                 	fi
                 	
                 	# Check for install.py
-                	if [ -f "install.py" ]; then
-                    	echo "Running install.py for $node_dir"
-                    	python install.py
-                	fi
+					if [ -f "install.py" ]; then
+					echo "Running install.py for $node_dir"
+					python install.py
+					fi
                 	
                 	# Check for setup.py
      				if [ -f "setup.py" ]; then
