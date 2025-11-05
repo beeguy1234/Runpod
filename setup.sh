@@ -47,7 +47,6 @@ pip install --no-cache insightface
 pip install --no-cache sageattention==1.0.6
 
 # Install dependencies for all custom nodes
-# Install dependencies for all custom nodes
         cd "/app/ComfyUI/custom_nodes"
         echo "Current directory: $(pwd). Looking for custom nodes..."
 		for node_dir in */; do
