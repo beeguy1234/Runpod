@@ -50,21 +50,20 @@ pip install --no-cache sageattention==1.0.6
 # Install dependencies for all custom nodes
         cd "/app/ComfyUI/custom_nodes"
         echo "Current directory: $(pwd). Looking for custom nodes..."
-        for node_dir in */; do
-			echo "***** STARTING INSTALL $node_dir"
-            if [ -d "$node_dir" ]; then
-            	
-                # Start een subshell met (
+		for node_dir in */; do
+		echo "***** STARTING INSTALL $node_dir"
+		if [ -d "$node_dir" ]; then
+		        # Start een subshell met (
             	(
-                	echo "Checking dependencies for $node_dir..."
-                    # Je kan dit ook simpeler schrijven, aangezien je al in de map staat:
-                	cd "$node_dir" 
-                	echo "Changed directory to $(pwd)"
-                	
+				echo "Checking dependencies for $node_dir..."
+				# Je kan dit ook simpeler schrijven, aangezien je al in de map staat:
+				cd "$node_dir"
+				echo "Changed directory to $(pwd)"
+				
                 	# Check for requirements.txt
-                	if [ -f "requirements.txt" ]; then
-                    	echo "Installing requirements.txt for $node_dir"
-            _       	pip install --no-cache -r requirements.txt
+					if [ -f "requirements.txt" ]; then
+					echo "Installing requirements.txt for $node_dir"
+					pip install --no-cache -r requirements.txt
                 	fi
                 	
                 	# Check for install.py
@@ -74,11 +73,11 @@ pip install --no-cache sageattention==1.0.6
                 	fi
                 	
                 	# Check for setup.py
-      _         	if [ -f "setup.py" ]; then
-                    	echo "Running setup.py for $node_dir"
-                    	pip install --no-cache -e .
-                	fi
-            	) # Einde van de subshell. De CWD wordt nu hersteld.
+     				if [ -f "setup.py" ]; then
+					echo "Running setup.py for $node_dir"
+					pip install --no-cache -e .
+					fi
+					) # Einde van de subshell. De CWD wordt nu hersteld.
 
             fi
         done
