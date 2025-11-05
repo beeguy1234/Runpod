@@ -60,7 +60,7 @@ pip install --no-cache sageattention==1.0.6
                 	if [ -f "requirements.txt" ]; then
                    	 	echo "Installing requirements.txt for $node_dir"
 						# sam2 uitsluiten want het wijzigt de torch versie (en is heel langzaam om te installeren).  Dit is normaal deel van impact-pack node.
-                    	pip install --no-cache -r <(grep -vE '^(torch|torchvision|torchaudio|facebookresearch/sam2)' requirements.txt)
+                    	pip install --no-cache -r <(grep -vE '(^torch|^torchvision|^torchaudio|facebookresearch/sam2)' requirements.txt)
 						#pip install --no-cache -r requirements.txt
                 	fi
                 
