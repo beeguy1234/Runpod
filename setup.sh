@@ -39,6 +39,7 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 #mv ComfyUI-Impact-Pack comfyui-impact-pack
 
 cd /app/ComfyUI
+pip install -U pip
 pip install --no-cache -r requirements.txt
 pip install --no-cache GitPython numpy pillow opencv-python  # Common dependencies
 # pip install --no-cache triton onnx onnxruntime-gpu
@@ -58,6 +59,7 @@ pip install --no-cache sageattention==1.0.6
                 	# Check for requirements.txt
                 	if [ -f "requirements.txt" ]; then
                    	 	echo "Installing requirements.txt for $node_dir"
+						# sam2 uitsluiten want het wijzigt de torch versie (en is heel langzaam om te installeren).  Dit is normaal deel van impact-pack node.
                     	grep -vE '^(torch|torchvision|torchaudio|facebookresearch/sam2)' requirements.txt pip install --no-cache -r -
 						#pip install --no-cache -r requirements.txt
                 	fi
