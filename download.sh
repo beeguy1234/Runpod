@@ -111,6 +111,7 @@ GROUP_WAN_I2V=(
     "WAN_VAE_2_1"
     "WAN_DIFFMOD_I2V_HIGH"
     "WAN_DIFFMOD_I2V_LOW"
+    "UPSCALER_NOMOS_ESRGAN_X2"
 )
 
 # Groep 4: Upscaler (Algemeen)
