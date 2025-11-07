@@ -50,6 +50,8 @@ ALL_DOWNLOADS[Realism_SDXL_By-Stable_Yogi_V7_BF16]="https://civitai.com/api/down
 # Voorbeelden met de OUDE (default) werking:
 ALL_DOWNLOADS[SD3_5_CHECKPOINT]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors|checkpoints"
 ALL_DOWNLOADS[SD3_5_VAE]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/vae/diffusion_pytorch_model.safetensors|vae"
+ALL_DOWNLOADS[SD3_5_IPADAPTER]="https://huggingface.co/InstantX/SD3.5-Large-IP-Adapter/blob/main/ip-adapter.bin|ipadapter|SD3.5-Large-IP-Adapter"
+ALL_DOWNLOADS[SD3_5_CLIPVISION]="https://huggingface.co/Comfy-Org/sigclip_vision_384|clip_vision|SD3.5-clipvision"
 ALL_DOWNLOADS[FLUX_DEV]="https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev.safetensors|checkpoints"
 ALL_DOWNLOADS[T5]="https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors|text_encoders"
 ALL_DOWNLOADS[CLIP_G]="https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/resolve/main/text_encoders/clip_g.safetensors|text_encoders"
@@ -95,6 +97,8 @@ GROUP_SD3_5=(
     "SD3_5_VAE"
     "CLIP_L"
     "CLIP_G"
+    "SD3_5_IPADAPTER"
+    "SD3_5_CLIPVISION"
 )
 
 # Groep 2: FLUX (Specifiek)
