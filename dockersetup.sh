@@ -27,6 +27,9 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
      fi
  done
 
+apt-get update
+apt-get -y install aria2
+
 # uitzonderlijk deze node moet blijkbaar hernoemd worden :
 #cd /app/ComfyUI/custom_nodes
 #mv ComfyUI-Impact-Pack comfyui-impact-pack
