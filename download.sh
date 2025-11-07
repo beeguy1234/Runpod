@@ -237,7 +237,7 @@ download_files() {
         if [ -f "$dest_file" ]; then
             echo "($i/$total) [SKIPPED] $filename bestaat al in $dest_folder."
         else
-            echo "($i/$total) [DOWNLOADING] Start download: $filename -> $dest_folder"
+            echo "($i/$total) [DOWNLOADING] Start download from $modified_url : $filename -> $dest_folder"
             
             # Gebruik 'eval' om de string met opties correct te parsen, inclusief de header
             # $ARIA2_HEADER_OPT is leeg als er geen match is, of bevat de --header... string
