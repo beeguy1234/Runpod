@@ -12,8 +12,6 @@ if [ -z "$(command -v aria2c)" ]; then
 # Controleer Hugging Face Secret
 if [ -z "$MIJN_SECRET" ]; then
   echo "Fout: De variabele MIJN_SECRET (voor Hugging Face) is niet ingesteld."
-  echo "Stel deze in voordat je het script uitvoert:"
-  echo "export MIJN_SECRET='jouw_huggingface_token'"
   exit 1
 else
   echo "Secret voor Hugging Face gedetecteerd."
@@ -22,8 +20,6 @@ fi
 # Controleer Civitai Secret
 if [ -z "$CIVITAI_SECRET" ]; then
   echo "Fout: De variabele CIVITAI_SECRET (voor Civitai) is niet ingesteld."
-  echo "Stel deze in voordat je het script uitvoert:"
-  echo "export CIVITAI_SECRET='jouw_civitai_api_key'"
   exit 1
 else
   echo "Secret voor Civitai gedetecteerd."
