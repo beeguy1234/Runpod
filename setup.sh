@@ -23,6 +23,8 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 	"https://github.com/chrisgoringe/cg-use-everywhere"
 	"https://github.com/ltdrdata/ComfyUI-Impact-Pack"
 	"https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
+		"https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
+		"https://huggingface.co/InstantX/SD3.5-Large-IP-Adapter"
 	)
 
  for repo in "${CUSTOM_NODES[@]}"; do
