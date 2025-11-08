@@ -19,6 +19,7 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 	"https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
 	"https://huggingface.co/InstantX/SD3.5-Large-IP-Adapter"
 	"https://github.com/kijai/ComfyUI-segment-anything-2"
+	"https://github.com/kijai/ComfyUI-WanVideoWrapper"
 	)
 
  for repo in "${CUSTOM_NODES[@]}"; do
