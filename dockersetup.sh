@@ -17,7 +17,7 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 	"https://github.com/ltdrdata/ComfyUI-Impact-Pack"
 	"https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
 	"https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
-	"https://huggingface.co/InstantX/SD3.5-Large-IP-Adapter"
+	"https://github.com/Slickytail/ComfyUI-InstantX-IPAdapter-SD3"
 	"https://github.com/kijai/ComfyUI-segment-anything-2"
 	"https://github.com/kijai/ComfyUI-WanVideoWrapper"
 	)
