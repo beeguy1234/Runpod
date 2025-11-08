@@ -60,6 +60,7 @@ ALL_DOWNLOADS[WAN_LORA_LIGHTX]="https://huggingface.co/Kijai/WanVideo_comfy/reso
 ALL_DOWNLOADS[WAN_DIFFMOD_I2V_HIGH]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors|diffusion_models"
 ALL_DOWNLOADS[WAN_DIFFMOD_I2V_LOW]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors|diffusion_models"
 ALL_DOWNLOADS[WAN_DIFFMOD_ANIMATE]="https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/Wan22Animate/Wan2_2-Animate-14B_fp8_scaled_e4m3fn_KJ_v2.safetensors|diffusion_models"
+ALL_DOWNLOADS[CLIP_VISION_H]="https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors|clip_vision"
 ALL_DOWNLOADS[SEGMENTATION]="https://huggingface.co/VeryAladeen/Sec-4B/resolve/main/SeC-4B-fp16.safetensors|sams"
 ALL_DOWNLOADS[WAN_VAE_2_1]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors|vae"
 ALL_DOWNLOADS[WAN_VAE_2_2]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan2.2_vae.safetensors|vae"
@@ -111,7 +112,7 @@ GROUP_WAN_I2V=(
     "WAN_VAE_2_1"
     "WAN_DIFFMOD_I2V_HIGH"
     "WAN_DIFFMOD_I2V_LOW"
-    "UPSCALER_NOMOS_ESRGAN_X2"
+    "UPSCALER_ESRGAN_X2"
 )
 
 # Groep 4: Upscaler (Algemeen)
@@ -131,6 +132,8 @@ GROUP_WAN_ANIMATE=(
     "VITPOSE_L"
     "YOLOV10M"
     "SEGMENTATION"
+    "UPSCALER_ESRGAN_X2"
+    "CLIP_VISION_H"
 )
 
 # icm IPadapters
