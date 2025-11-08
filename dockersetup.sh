@@ -38,7 +38,7 @@ cd /app/ComfyUI
 pip install -U pip
 pip install --no-cache -r requirements.txt
 pip install --no-cache GitPython numpy pillow opencv-python  # Common dependencies
-# pip install --no-cache triton onnx onnxruntime-gpu
+pip install --no-cache onnxruntime-gpu
 # insightface voor ipadapter :
 pip install --no-cache insightface
 pip install --no-cache sageattention==1.0.6
