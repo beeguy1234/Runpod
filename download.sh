@@ -42,6 +42,7 @@ declare -A ALL_DOWNLOADS
 
 # Voorbeeld met de NIEUWE optie (derde parameter):
 ALL_DOWNLOADS[Realism_SDXL_By-Stable_Yogi_V7_BF16]="https://civitai.com/api/download/models/1928565?type=Model&format=SafeTensor&size=pruned&fp=fp16|checkpoints|Realism_SDXL_By-Stable_Yogi_V7_BF16.safetensors"
+ALL_DOWNLOADS[Realism_SDXL_By-Stable_Yogi_V8_FP32]="https://civitai.com/api/download/models/2337812?type=Model&format=SafeTensor&size=pruned&fp=fp32|checkpoints|Realism_SDXL_By-Stable_Yogi_V8_FP32.safetensors"
 
 # Voorbeelden met de OUDE (default) werking:
 ALL_DOWNLOADS[SD3_5_CHECKPOINT]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors|checkpoints"
@@ -138,7 +139,7 @@ GROUP_WAN_ANIMATE=(
 
 # icm IPadapters
 GROUP_STABLE_YOGI=(
- "Realism_SDXL_By-Stable_Yogi_V7_BF16"
+ "Realism_SDXL_By-Stable_Yogi_V8_FP32"
  )
 
  GROUP_IP_ADAPTER=(
