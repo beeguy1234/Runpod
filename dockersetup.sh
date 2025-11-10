@@ -20,6 +20,7 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 	"https://github.com/Slickytail/ComfyUI-InstantX-IPAdapter-SD3"
 	"https://github.com/kijai/ComfyUI-segment-anything-2"
 	"https://github.com/kijai/ComfyUI-WanVideoWrapper"
+	"https://github.com/kijai/ComfyUI-WanAnimatePreprocess"
 	)
 
  for repo in "${CUSTOM_NODES[@]}"; do
