@@ -21,6 +21,7 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 	"https://github.com/kijai/ComfyUI-segment-anything-2"
 	"https://github.com/kijai/ComfyUI-WanVideoWrapper"
 	"https://github.com/kijai/ComfyUI-WanAnimatePreprocess"
+	"https://github.com/cubiq/ComfyUI_essentials"
 	)
 
  for repo in "${CUSTOM_NODES[@]}"; do
