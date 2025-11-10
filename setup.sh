@@ -25,6 +25,10 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 	"https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
 	"https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
 	"https://github.com/Slickytail/ComfyUI-InstantX-IPAdapter-SD3"
+	"https://github.com/kijai/ComfyUI-segment-anything-2"
+	"https://github.com/kijai/ComfyUI-WanVideoWrapper"
+	"https://github.com/kijai/ComfyUI-WanAnimatePreprocess"
+	"https://github.com/cubiq/ComfyUI_essentials"
 	)
 
  for repo in "${CUSTOM_NODES[@]}"; do
@@ -82,10 +86,10 @@ pip install --no-cache sageattention==1.0.6
         done
 
 
-apt-get update
-apt-get -y install aria2
+#apt-get update
+#apt-get -y install aria2
 
-cd /app/ComfyUI
-nohup python main.py --listen --port 8188 --use-sage-attention &
+#cd /app/ComfyUI
+#nohup python main.py --listen --port 8188 --use-sage-attention &
 
-curl -sL https://raw.githubusercontent.com/beeguy1234/Runpod/main/download.sh | bash
+#curl -sL https://raw.githubusercontent.com/beeguy1234/Runpod/main/download.sh | bash
