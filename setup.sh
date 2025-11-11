@@ -18,7 +18,7 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
   	"https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
   	"https://github.com/yolain/ComfyUI-Easy-Use"
 	"https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
-	"https://github.com/Fannovel16/comfyui_controlnet_aux"
+	# "https://github.com/Fannovel16/comfyui_controlnet_aux" veroorzaakt numpy conflicten via mediapipe.  DWPose kan via WanAnimatePreProcess (en sneller bovendien). Depthmaps nog een oplossing nodig ?
 	"https://github.com/cubiq/ComfyUI_IPAdapter_plus"
 	"https://github.com/chrisgoringe/cg-use-everywhere"
 	"https://github.com/ltdrdata/ComfyUI-Impact-Pack"
