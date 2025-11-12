@@ -27,7 +27,7 @@ fi
 
 # Basisinstellingen
 BASE_MODEL_DIR="/app/ComfyUI/models"
-ARIA2_OPTS="-c -x 16 -s 16"
+ARIA2_OPTS="-c -x 16 -s 16 --log-level=warn"
 # Definieer de headers voor de verschillende services
 ARIA2_HEADER_HF="Authorization: Bearer ${MIJN_SECRET}"
 # ARIA2_HEADER_CIVITAI="Authorization: Bearer ${CIVITAI_SECRET}" # Niet meer nodig, wordt query param
