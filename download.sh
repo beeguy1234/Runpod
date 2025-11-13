@@ -40,16 +40,22 @@ ARIA2_HEADER_HF="Authorization: Bearer ${MIJN_SECRET}"
 
 declare -A ALL_DOWNLOADS
 
-# Voorbeeld met de NIEUWE optie (derde parameter):
 ALL_DOWNLOADS[Realism_SDXL_By-Stable_Yogi_V7_BF16]="https://civitai.com/api/download/models/1928565?type=Model&format=SafeTensor&size=pruned&fp=fp16|checkpoints|Realism_SDXL_By-Stable_Yogi_V7_BF16.safetensors"
 ALL_DOWNLOADS[Realism_SDXL_By-Stable_Yogi_V8_FP32]="https://civitai.com/api/download/models/2337812?type=Model&format=SafeTensor&size=pruned&fp=fp32|checkpoints|Realism_SDXL_By-Stable_Yogi_V8_FP32.safetensors"
-
-# Voorbeelden met de OUDE (default) werking:
+ALL_DOWNLOADS[SDXL_clothed_large_breasts]="https://civitai.com/api/download/models/830011?type=Model&format=SafeTensor|loras|clothed_large_breasts"
+ALL_DOWNLOADS[SDXL_round_breasts]="https://civitai.com/api/download/models/592781?type=Model&format=SafeTensor|loras|round_breasts"
 ALL_DOWNLOADS[SD3_5_CHECKPOINT]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors|checkpoints"
 ALL_DOWNLOADS[SD3_5_VAE]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/vae/diffusion_pytorch_model.safetensors|vae"
 ALL_DOWNLOADS[SD3_5_IPADAPTER]="https://huggingface.co/InstantX/SD3.5-Large-IP-Adapter/resolve/main/ip-adapter.bin|ipadapter|SD3.5-Large-IP-Adapter.bin"
 ALL_DOWNLOADS[SD3_5_CLIPVISION]="https://huggingface.co/Comfy-Org/sigclip_vision_384/resolve/main/sigclip_vision_patch14_384.safetensors|clip_vision|SD3.5-clipvision.safetensors"
+ALL_DOWNLOADS[illustrious_realism]="https://civitai.com/api/download/models/1643845?type=Model&format=SafeTensor&size=full&fp=fp16|checkpoints|illustrious_realism"
+ALL_DOWNLOADS[ILL_CURVE_SLIDER]="https://civitai.com/api/download/models/2255547?type=Model&format=SafeTensor|loras|illustrious_curve_slider"
+ALL_DOWNLOADS[ILL_ROUND_BREASTS]="https://civitai.com/api/download/models/1728290?type=Model&format=SafeTensor|loras|illustrious_round_breasts"
 ALL_DOWNLOADS[FLUX_DEV]="https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev.safetensors|checkpoints"
+ALL_DOWNLOADS[FLUX_round_breasts_slim_waist]="https://civitai.com/api/download/models/1782533?type=Model&format=SafeTensor|loras|round_breasts_slim_waist"
+ALL_DOWNLOADS[FLUX_boring_effect]="https://civitai.com/api/download/models/922781?type=Model&format=SafeTensor|loras|boring_effect"
+ALL_DOWNLOADS[FLUX_boring_elements]="https://civitai.com/api/download/models/922772?type=Model&format=SafeTensor|loras|boring-elements"
+ALL_DOWNLOADS[FLUX_realism_lora]="https://huggingface.co/XLabs-AI/flux-RealismLora/resolve/main/lora.safetensors|loras|flux_realism_lora"
 ALL_DOWNLOADS[T5]="https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors|text_encoders"
 ALL_DOWNLOADS[CLIP_G]="https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/resolve/main/text_encoders/clip_g.safetensors|text_encoders"
 ALL_DOWNLOADS[CLIP_L]="https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/resolve/main/text_encoders/clip_l.safetensors|text_encoders"
@@ -103,8 +109,12 @@ GROUP_SD3_5=(
 
 # Groep 2: FLUX (Specifiek)
 GROUP_FLUX=(
+    "FLUX_DEV"
     "T5"
     "SD3_5_VAE"
+    "FLUX_round_breasts_slim_waist"
+    "FLUX_boring_effect"
+    "FLUX_boring_elements"
 )
 
 # Groep 3: Wan 2.2 I2V (Alles voor Wan)
@@ -142,7 +152,10 @@ GROUP_WAN_ANIMATE=(
 # icm IPadapters
 GROUP_STABLE_YOGI=(
  "Realism_SDXL_By-Stable_Yogi_V8_FP32"
+ "SDXL_clothed_large_breasts"
+ "SDXL_round_breasts"
  )
+
 
  GROUP_IP_ADAPTER=(
     "ip-adapter-faceid-plusv2_sdxl"
@@ -158,6 +171,11 @@ GROUP_STABLE_YOGI=(
     "CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors"
     "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"    
  )
+GROUP_ILLUSTRIOUS_REALISM=(
+     "illustrious_realism"
+     "ILL_CURVE_SLIDER"
+     "ILL_ROUND_BREASTS"
+     )
 
 
 # --- 3. DOWNLOAD FUNCTIE (AANGEPAST) ---
@@ -283,6 +301,7 @@ function show_menu() {
     echo "  5) Wan 2.2 Animate"
     echo "  6) Stable Yogi Realism met IP Adapter dinges"
     echo "  7) IP Adapter dinges"
+    echo "  8) Illustrious Realism"
     echo
     echo "  q) Stoppen (Quit)"
     echo "-------------------------------------"
@@ -316,6 +335,9 @@ while true; do
             ;;
         7)
             download_files "${GROUP_IP_ADAPTER[@]}"
+            ;;
+        8)
+            download_files "${GROUP_ILLUSTRIOUS_REALISM}"
             ;;
         q|Q)
             echo "Script stoppen."
