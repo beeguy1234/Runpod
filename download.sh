@@ -90,6 +90,7 @@ ALL_DOWNLOADS[ip-adapter-plus-face_sdxl_vit-h]="https://huggingface.co/h94/IP-Ad
 ALL_DOWNLOADS[ip-adapter_sdxl]="https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl.safetensors|ipadapter"
 ALL_DOWNLOADS[CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors]="https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/image_encoder/model.safetensors|clip_vision|CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors"
 ALL_DOWNLOADS[CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors]="https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors|clip_vision|CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
+ALL_DOWNLOADS[OPENPOSEXL2_CONTROLNET]="https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0/resolve/main/OpenPoseXL2.safetensors|controlnet"
 
 
 
@@ -156,6 +157,7 @@ GROUP_STABLE_YOGI=(
  "SDXL_round_breasts"
  "VITPOSE_L"
  "YOLOV10M"
+ "OPENPOSEXL2_CONTROLNET"
  )
 
 
