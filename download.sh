@@ -154,6 +154,8 @@ GROUP_STABLE_YOGI=(
  "Realism_SDXL_By-Stable_Yogi_V8_FP32"
  "SDXL_clothed_large_breasts"
  "SDXL_round_breasts"
+ "VITPOSE_L"
+ "YOLOV10M"
  )
 
 
