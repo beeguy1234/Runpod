@@ -9,13 +9,11 @@ while [[ $# -gt 0 ]]; do
 
   case $key in
     --sage2)
-      # Dit is een 'boolean' vlag. We zetten FORCE op 1 (true).
       sage_two=true;
       shift # Ga naar het volgende argument
       ;;
     *)
       # Dit is een onbekende optie OF een positioneel argument
-      # We slaan het op voor later gebruik.
       echo "ONBEKEND ARGUMENT"
       shift # Ga naar het volgende argument
       ;;
