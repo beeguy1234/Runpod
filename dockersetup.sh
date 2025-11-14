@@ -1,5 +1,27 @@
 #!/bin/bash
 
+SAGE2 = false;
+
+# --- De argumenten-loop ---
+# Blijf loopen zolang er argumenten ($#) zijn
+while [[ $# -gt 0 ]]; do
+  key="$1"
+
+  case $key in
+    --sage2)
+      # Dit is een 'boolean' vlag. We zetten FORCE op 1 (true).
+      SAGE2 = true;
+      shift # Ga naar het volgende argument
+      ;;
+    *)
+      # Dit is een onbekende optie OF een positioneel argument
+      # We slaan het op voor later gebruik.
+      echo "ONBEKEND ARGUMENT"
+      shift # Ga naar het volgende argument
+      ;;
+  esac
+done
+
 mkdir -p /app
 cd /app
 git clone https://github.com/comfyanonymous/ComfyUI.git
@@ -47,7 +69,9 @@ pip install --no-cache GitPython numpy pillow opencv-python  # Common dependenci
 # pip install --no-cache onnxruntime-gpu    : dit op de pod zelf installeren vanwege afhankelijkheid van de GPU in kwestie !
 # insightface voor ipadapter :
 pip install --no-cache insightface
-pip install --no-cache sageattention==1.0.6
+if [ SAGE2==false ]; then
+	pip install --no-cache sageattention==1.0.6
+	fi
 
 # Install dependencies for all custom nodes
         cd "/app/ComfyUI/custom_nodes"
