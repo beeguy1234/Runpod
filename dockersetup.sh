@@ -70,7 +70,7 @@ pip install --no-cache GitPython numpy pillow opencv-python  # Common dependenci
 # insightface voor ipadapter :
 pip install --no-cache insightface
 # installeer sage1 ifv de flag, want misschien heeft docker build voordien al gezorgd voor sage2 installatie.
-if [ sage_two==false ]; then
+if [[ "$sage_two" == "false" ]]; then
 	pip install --no-cache sageattention==1.0.6
 	fi
 
