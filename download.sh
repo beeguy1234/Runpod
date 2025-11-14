@@ -41,7 +41,7 @@ ARIA2_HEADER_HF="Authorization: Bearer ${MIJN_SECRET}"
 declare -A ALL_DOWNLOADS
 
 ALL_DOWNLOADS[Realism_SDXL_By-Stable_Yogi_V7_BF16]="https://civitai.com/api/download/models/1928565?type=Model&format=SafeTensor&size=pruned&fp=fp16|checkpoints|Realism_SDXL_By-Stable_Yogi_V7_BF16.safetensors"
-ALL_DOWNLOADS[Realism_SDXL_By-Stable_Yogi_V8_FP32]="https://civitai.com/api/download/models/2337812?type=Model&format=SafeTensor&size=pruned&fp=fp32|checkpoints|Realism_SDXL_By-Stable_Yogi_V8_FP32.safetensors"
+ALL_DOWNLOADS[Ultra_Realistic_SDXL_By-Stable_Yogi]="https://civitai.com/api/download/models/2285644?type=Model&format=SafeTensor&size=pruned&fp=fp16|checkpoints|ultraRealistic.safetensors"
 ALL_DOWNLOADS[SDXL_Cyberrealistic21]="https://civitai.com/api/download/models/611386?type=Model&format=SafeTensor&size=pruned&fp=fp16|checkpoints|Cyberrealistic21.safetensors"
 ALL_DOWNLOADS[SDXL_clothed_large_breasts]="https://civitai.com/api/download/models/830011?type=Model&format=SafeTensor|loras|clothed_large_breasts.safetensors"
 ALL_DOWNLOADS[SDXL_round_breasts]="https://civitai.com/api/download/models/592781?type=Model&format=SafeTensor|loras|round_breasts.safetensors"
@@ -153,7 +153,7 @@ GROUP_WAN_ANIMATE=(
 
 # icm IPadapters
 GROUP_SDXL=(
- "Realism_SDXL_By-Stable_Yogi_V8_FP32"
+ "Ultra_Realistic_SDXL_By-Stable_Yogi"
  "SDXL_Cyberrealistic21"
  "SDXL_clothed_large_breasts"
  "SDXL_round_breasts"
