@@ -10,6 +10,7 @@ while [[ $# -gt 0 ]]; do
   case $key in
     --sage2)
       sage_two=true;
+	  echo "SAGE ATTENTION 2 WORDT GEBRUIKT"
       shift # Ga naar het volgende argument
       ;;
     *)
