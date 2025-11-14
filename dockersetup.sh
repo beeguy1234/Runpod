@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SAGE2 = false;
+SAGE2=false;
 
 # --- De argumenten-loop ---
 # Blijf loopen zolang er argumenten ($#) zijn
@@ -10,7 +10,7 @@ while [[ $# -gt 0 ]]; do
   case $key in
     --sage2)
       # Dit is een 'boolean' vlag. We zetten FORCE op 1 (true).
-      SAGE2 = true;
+      SAGE2=true;
       shift # Ga naar het volgende argument
       ;;
     *)
