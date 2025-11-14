@@ -42,7 +42,7 @@ declare -A ALL_DOWNLOADS
 
 ALL_DOWNLOADS[Realism_SDXL_By-Stable_Yogi_V7_BF16]="https://civitai.com/api/download/models/1928565?type=Model&format=SafeTensor&size=pruned&fp=fp16|checkpoints|Realism_SDXL_By-Stable_Yogi_V7_BF16.safetensors"
 ALL_DOWNLOADS[Realism_SDXL_By-Stable_Yogi_V8_FP32]="https://civitai.com/api/download/models/2337812?type=Model&format=SafeTensor&size=pruned&fp=fp32|checkpoints|Realism_SDXL_By-Stable_Yogi_V8_FP32.safetensors"
-ALL_DOWNLOADS[SDXL_Cyberrealistic]="https://civitai.com/api/download/models/2152184?type=Model&format=SafeTensor&size=pruned&fp=fp16|checkpoints|Cyberrealistic.safetensors"
+ALL_DOWNLOADS[SDXL_Cyberrealistic21]="https://civitai.com/api/download/models/611386?type=Model&format=SafeTensor&size=pruned&fp=fp16|checkpoints|Cyberrealistic21.safetensors"
 ALL_DOWNLOADS[SDXL_clothed_large_breasts]="https://civitai.com/api/download/models/830011?type=Model&format=SafeTensor|loras|clothed_large_breasts.safetensors"
 ALL_DOWNLOADS[SDXL_round_breasts]="https://civitai.com/api/download/models/592781?type=Model&format=SafeTensor|loras|round_breasts.safetensors"
 ALL_DOWNLOADS[SD3_5_CHECKPOINT]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors|checkpoints"
@@ -154,7 +154,7 @@ GROUP_WAN_ANIMATE=(
 # icm IPadapters
 GROUP_SDXL=(
  "Realism_SDXL_By-Stable_Yogi_V8_FP32"
- "SDXL_Cyberrealistic"
+ "SDXL_Cyberrealistic21"
  "SDXL_clothed_large_breasts"
  "SDXL_round_breasts"
  "VITPOSE_L"
