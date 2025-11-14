@@ -69,6 +69,7 @@ pip install --no-cache GitPython numpy pillow opencv-python  # Common dependenci
 # pip install --no-cache onnxruntime-gpu    : dit op de pod zelf installeren vanwege afhankelijkheid van de GPU in kwestie !
 # insightface voor ipadapter :
 pip install --no-cache insightface
+# installeer sage1 ifv de flag, want misschien heeft docker build voordien al gezorgd voor sage2 installatie.
 if [ SAGE2==false ]; then
 	pip install --no-cache sageattention==1.0.6
 	fi
