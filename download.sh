@@ -60,8 +60,8 @@ ALL_DOWNLOADS[FLUX_realism_lora]="https://huggingface.co/XLabs-AI/flux-RealismLo
 ALL_DOWNLOADS[T5]="https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors|text_encoders"
 ALL_DOWNLOADS[CLIP_G]="https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/resolve/main/text_encoders/clip_g.safetensors|text_encoders"
 ALL_DOWNLOADS[CLIP_L]="https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/resolve/main/text_encoders/clip_l.safetensors|text_encoders"
-ALL_DOWNLOADS[UMT5_TEST]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors|text_encoders"
-ALL_DOWNLOADS[UMT5]="https://huggingface.co/Wan-AI/Wan2.2-Animate-14B/resolve/main/models_t5_umt5-xxl-enc-bf16.pth|text_encoders|umt5-xxl-enc-bf16.pth"
+ALL_DOWNLOADS[UMT5]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors|text_encoders"
+#ALL_DOWNLOADS[UMT5_ERROR]="https://huggingface.co/Wan-AI/Wan2.2-Animate-14B/resolve/main/models_t5_umt5-xxl-enc-bf16.pth|text_encoders|umt5-xxl-enc-bf16.pth"
 ALL_DOWNLOADS[WAN_LORA_RELIGHT]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_animate_14B_relight_lora_bf16.safetensors|loras"
 ALL_DOWNLOADS[WAN_LORA_I2V_HIGH]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors|loras"
 ALL_DOWNLOADS[WAN_LORA_I2V_LOW]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors|loras"
@@ -143,7 +143,7 @@ GROUP_UPSCALER=(
 # Groep 5: Wan Animate
 GROUP_WAN_ANIMATE=(
     "UMT5"
-    "UMT5_TEST"
+    "UMT5"
     "WAN_DIFFMOD_ANIMATE"
     "WAN_LORA_LIGHTX"
     "WAN_LORA_RELIGHT"
@@ -188,7 +188,7 @@ GROUP_ILLUSTRIOUS_REALISM=(
      )
 GROUP_WAN_T2V=(
     "UMT5"
-    "UMT5_TEST"
+    "UMT5"
     "WAN_LORA_I2V_HIGH"
     "WAN_LORA_I2V_LOW"
     "WAN_VAE_2_1"
