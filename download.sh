@@ -69,6 +69,8 @@ ALL_DOWNLOADS[WAN_LORA_LIGHTX]="https://huggingface.co/Kijai/WanVideo_comfy/reso
 ALL_DOWNLOADS[WAN_DIFFMOD_I2V_HIGH]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors|diffusion_models"
 ALL_DOWNLOADS[WAN_DIFFMOD_I2V_LOW]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors|diffusion_models"
 ALL_DOWNLOADS[WAN_DIFFMOD_ANIMATE]="https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/Wan22Animate/Wan2_2-Animate-14B_fp8_scaled_e4m3fn_KJ_v2.safetensors|diffusion_models"
+ALL_DOWNLOADS[WAN_DIFFMOD_T2V_HIGH]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_t2v_high_noise_14B_fp8_scaled.safetensors|diffusion_models"
+ALL_DOWNLOADS[WAN_DIFFMOD_T2V_LOW]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_t2v_low_noise_14B_fp8_scaled.safetensors|diffusion_models"
 ALL_DOWNLOADS[CLIP_VISION_H]="https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors|clip_vision"
 ALL_DOWNLOADS[SEGMENTATION]="https://huggingface.co/VeryAladeen/Sec-4B/resolve/main/SeC-4B-fp16.safetensors|sams"
 ALL_DOWNLOADS[WAN_VAE_2_1]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors|vae"
@@ -183,7 +185,14 @@ GROUP_ILLUSTRIOUS_REALISM=(
      "ILL_CURVE_SLIDER"
      "ILL_ROUND_BREASTS"
      )
-
+GROUP_WAN_T2V=(
+    "UMT5"
+    "WAN_LORA_I2V_HIGH"
+    "WAN_LORA_I2V_LOW"
+    "WAN_VAE_2_1"
+    "WAN_DIFFMOD_T2V_HIGH"
+    "WAN_DIFFMOD_T2V_LOW"
+    )
 
 # --- 3. DOWNLOAD FUNCTIE (AANGEPAST) ---
 # Deze functie verwerkt het downloaden.
@@ -309,6 +318,7 @@ function show_menu() {
     echo "  6) SDXL modellen (yogi, cyberrealistic, met IP Adapter dinges"
     echo "  7) IP Adapter dinges"
     echo "  8) Illustrious Realism"
+    echo "  9) Wan 2.2 T2V"
     echo
     echo "  q) Stoppen (Quit)"
     echo "-------------------------------------"
@@ -344,7 +354,10 @@ while true; do
             download_files "${GROUP_IP_ADAPTER[@]}"
             ;;
         8)
-            download_files "${GROUP_ILLUSTRIOUS_REALISM}"
+            download_files "${GROUP_ILLUSTRIOUS_REALISM[@]}"
+            ;;
+        9)
+            download_files "${GROUP_WAN_T2V[@]}"
             ;;
         q|Q)
             echo "Script stoppen."
