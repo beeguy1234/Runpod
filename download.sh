@@ -92,7 +92,8 @@ ALL_DOWNLOADS[ip-adapter_sdxl]="https://huggingface.co/h94/IP-Adapter/resolve/ma
 ALL_DOWNLOADS[CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors]="https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/image_encoder/model.safetensors|clip_vision|CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors"
 ALL_DOWNLOADS[CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors]="https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors|clip_vision|CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
 ALL_DOWNLOADS[OPENPOSEXL2_CONTROLNET]="https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0/resolve/main/OpenPoseXL2.safetensors|controlnet"
-
+ALL_DOWNLOADS[SEEDVR2_3B_FP16]="https://huggingface.co/numz/SeedVR2_comfyUI/resolve/main/seedvr2_ema_3b_fp16.safetensors|SEEDVR2"
+ALL_DOWNLOADS[SEEDVR2_7B_FP16]="https://huggingface.co/numz/SeedVR2_comfyUI/resolve/main/seedvr2_ema_7b_fp16.safetensors|SEEDVR2"
 
 
 # --- 2. DEFINIEER HIER JE GROEPEN ---
