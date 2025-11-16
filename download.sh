@@ -46,12 +46,13 @@ ALL_DOWNLOADS[SDXL_Cyberrealistic21]="https://civitai.com/api/download/models/61
 ALL_DOWNLOADS[SDXL_clothed_large_breasts]="https://civitai.com/api/download/models/830011?type=Model&format=SafeTensor|loras|clothed_large_breasts.safetensors"
 ALL_DOWNLOADS[SDXL_round_breasts]="https://civitai.com/api/download/models/592781?type=Model&format=SafeTensor|loras|round_breasts.safetensors"
 ALL_DOWNLOADS[SD3_5_CHECKPOINT]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors|checkpoints"
-ALL_DOWNLOADS[SD3_5_VAE]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/vae/diffusion_pytorch_model.safetensors|vae|SD3_5_FLUX_VAE"
+ALL_DOWNLOADS[SD3_5_VAE]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/vae/diffusion_pytorch_model.safetensors|vae|SD3_5"
 ALL_DOWNLOADS[SD3_5_IPADAPTER]="https://huggingface.co/InstantX/SD3.5-Large-IP-Adapter/resolve/main/ip-adapter.bin|ipadapter|SD3.5-Large-IP-Adapter.bin"
 ALL_DOWNLOADS[SD3_5_CLIPVISION]="https://huggingface.co/Comfy-Org/sigclip_vision_384/resolve/main/sigclip_vision_patch14_384.safetensors|clip_vision|SD3.5-clipvision.safetensors"
 ALL_DOWNLOADS[illustrious_realism]="https://civitai.com/api/download/models/1643845?type=Model&format=SafeTensor&size=full&fp=fp16|checkpoints|illustrious_realism.safetensors"
 ALL_DOWNLOADS[ILL_CURVE_SLIDER]="https://civitai.com/api/download/models/2255547?type=Model&format=SafeTensor|loras|illustrious_curve_slider.safetensors"
 ALL_DOWNLOADS[ILL_ROUND_BREASTS]="https://civitai.com/api/download/models/1728290?type=Model&format=SafeTensor|loras|illustrious_round_breasts.safetensors"
+ALL_DOWNLOADS[FLUX_VAE]="https://huggingface.co/black-forest-labs/FLUX.1-Kontext-dev/resolve/main/ae.safetensors|vae|FLUX-VAE"
 ALL_DOWNLOADS[FLUX_KONTEXT_FP8]="https://huggingface.co/6chan/flux1-kontext-dev-fp8/resolve/main/flux1-kontext-dev-fp8-e4m3fn.safetensors|unet"
 ALL_DOWNLOADS[FLUX_KONTEXT_FULL]="https://huggingface.co/black-forest-labs/FLUX.1-Kontext-dev/resolve/main/flux1-kontext-dev.safetensors|unet"
 ALL_DOWNLOADS[FLUX_DEV]="https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev.safetensors|checkpoints"
@@ -118,7 +119,7 @@ GROUP_SD3_5=(
 GROUP_FLUX=(
     "FLUX_DEV"
     "T5"
-    "SD3_5_VAE"
+    "FLUX_VAE"
     "FLUX_round_breasts_slim_waist"
     "FLUX_boring_effect"
     "FLUX_boring_elements"
@@ -201,7 +202,7 @@ GROUP_WAN_T2V=(
 GROUP_FLUX_KONTEXT=(
     "FLUX_KONTEXT_FP8"
     "T5"
-    "SD3_5_VAE"
+    "FLUX_VAE"
     "FLUX_KONTEXT_FULL"
     )
 
