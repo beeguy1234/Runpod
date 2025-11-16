@@ -46,7 +46,7 @@ ALL_DOWNLOADS[SDXL_Cyberrealistic21]="https://civitai.com/api/download/models/61
 ALL_DOWNLOADS[SDXL_clothed_large_breasts]="https://civitai.com/api/download/models/830011?type=Model&format=SafeTensor|loras|clothed_large_breasts.safetensors"
 ALL_DOWNLOADS[SDXL_round_breasts]="https://civitai.com/api/download/models/592781?type=Model&format=SafeTensor|loras|round_breasts.safetensors"
 ALL_DOWNLOADS[SD3_5_CHECKPOINT]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/sd3.5_large.safetensors|checkpoints"
-ALL_DOWNLOADS[SD3_5_VAE]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/vae/diffusion_pytorch_model.safetensors|vae"
+ALL_DOWNLOADS[SD3_5_VAE]="https://huggingface.co/stabilityai/stable-diffusion-3.5-large/resolve/main/vae/diffusion_pytorch_model.safetensors|vae|SD3_5_FLUX_VAE"
 ALL_DOWNLOADS[SD3_5_IPADAPTER]="https://huggingface.co/InstantX/SD3.5-Large-IP-Adapter/resolve/main/ip-adapter.bin|ipadapter|SD3.5-Large-IP-Adapter.bin"
 ALL_DOWNLOADS[SD3_5_CLIPVISION]="https://huggingface.co/Comfy-Org/sigclip_vision_384/resolve/main/sigclip_vision_patch14_384.safetensors|clip_vision|SD3.5-clipvision.safetensors"
 ALL_DOWNLOADS[illustrious_realism]="https://civitai.com/api/download/models/1643845?type=Model&format=SafeTensor&size=full&fp=fp16|checkpoints|illustrious_realism.safetensors"
