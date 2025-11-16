@@ -53,6 +53,7 @@ ALL_DOWNLOADS[illustrious_realism]="https://civitai.com/api/download/models/1643
 ALL_DOWNLOADS[ILL_CURVE_SLIDER]="https://civitai.com/api/download/models/2255547?type=Model&format=SafeTensor|loras|illustrious_curve_slider.safetensors"
 ALL_DOWNLOADS[ILL_ROUND_BREASTS]="https://civitai.com/api/download/models/1728290?type=Model&format=SafeTensor|loras|illustrious_round_breasts.safetensors"
 ALL_DOWNLOADS[FLUX_KONTEXT_FP8]="https://huggingface.co/6chan/flux1-kontext-dev-fp8/resolve/main/flux1-kontext-dev-fp8-e4m3fn.safetensors|unet"
+ALL_DOWNLOADS[FLUX_KONTEXT_FULL]="https://huggingface.co/black-forest-labs/FLUX.1-Kontext-dev/resolve/main/flux1-kontext-dev.safetensors|unet"
 ALL_DOWNLOADS[FLUX_DEV]="https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev.safetensors|checkpoints"
 ALL_DOWNLOADS[FLUX_round_breasts_slim_waist]="https://civitai.com/api/download/models/1782533?type=Model&format=SafeTensor|loras|round_breasts_slim_waist.safetensors"
 ALL_DOWNLOADS[FLUX_boring_effect]="https://civitai.com/api/download/models/922781?type=Model&format=SafeTensor|loras|boring_effect.safetensors"
@@ -201,6 +202,7 @@ GROUP_FLUX_KONTEXT=(
     "FLUX_KONTEXT_FP8"
     "T5"
     "SD3_5_VAE"
+    "FLUX_KONTEXT_FULL"
     )
 
 # --- 3. DOWNLOAD FUNCTIE (AANGEPAST) ---
@@ -328,6 +330,7 @@ function show_menu() {
     echo "  7) IP Adapter dinges"
     echo "  8) Illustrious Realism"
     echo "  9) Wan 2.2 T2V"
+    echo "  10) Flux KONTEXT"
     echo
     echo "  q) Stoppen (Quit)"
     echo "-------------------------------------"
@@ -367,6 +370,9 @@ while true; do
             ;;
         9)
             download_files "${GROUP_WAN_T2V[@]}"
+            ;;
+        10)
+            download_files "${GROUP_FLUX_KONTEXT[@]}"
             ;;
         q|Q)
             echo "Script stoppen."
