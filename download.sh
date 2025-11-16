@@ -52,6 +52,7 @@ ALL_DOWNLOADS[SD3_5_CLIPVISION]="https://huggingface.co/Comfy-Org/sigclip_vision
 ALL_DOWNLOADS[illustrious_realism]="https://civitai.com/api/download/models/1643845?type=Model&format=SafeTensor&size=full&fp=fp16|checkpoints|illustrious_realism.safetensors"
 ALL_DOWNLOADS[ILL_CURVE_SLIDER]="https://civitai.com/api/download/models/2255547?type=Model&format=SafeTensor|loras|illustrious_curve_slider.safetensors"
 ALL_DOWNLOADS[ILL_ROUND_BREASTS]="https://civitai.com/api/download/models/1728290?type=Model&format=SafeTensor|loras|illustrious_round_breasts.safetensors"
+ALL_DOWNLOADS[FLUX_KONTEXT_FP8]="https://huggingface.co/6chan/flux1-kontext-dev-fp8/resolve/main/flux1-kontext-dev-fp8-e4m3fn.safetensors|unet"
 ALL_DOWNLOADS[FLUX_DEV]="https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev.safetensors|checkpoints"
 ALL_DOWNLOADS[FLUX_round_breasts_slim_waist]="https://civitai.com/api/download/models/1782533?type=Model&format=SafeTensor|loras|round_breasts_slim_waist.safetensors"
 ALL_DOWNLOADS[FLUX_boring_effect]="https://civitai.com/api/download/models/922781?type=Model&format=SafeTensor|loras|boring_effect.safetensors"
@@ -194,6 +195,12 @@ GROUP_WAN_T2V=(
     "WAN_VAE_2_1"
     "WAN_DIFFMOD_T2V_HIGH"
     "WAN_DIFFMOD_T2V_LOW"
+    )
+
+GROUP_FLUX_KONTEXT=(
+    "FLUX_KONTEXT_FP8"
+    "T5"
+    "SD3_5_VAE"
     )
 
 # --- 3. DOWNLOAD FUNCTIE (AANGEPAST) ---
