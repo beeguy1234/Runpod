@@ -53,7 +53,6 @@ ALL_DOWNLOADS[illustrious_realism]="https://civitai.com/api/download/models/1643
 ALL_DOWNLOADS[ILL_CURVE_SLIDER]="https://civitai.com/api/download/models/2255547?type=Model&format=SafeTensor|loras|illustrious_curve_slider.safetensors"
 ALL_DOWNLOADS[ILL_ROUND_BREASTS]="https://civitai.com/api/download/models/1728290?type=Model&format=SafeTensor|loras|illustrious_round_breasts.safetensors"
 ALL_DOWNLOADS[FLUX_VAE]="https://huggingface.co/black-forest-labs/FLUX.1-Kontext-dev/resolve/main/ae.safetensors|vae|FLUX-VAE.safetensors"
-ALL_DOWNLOADS[FLUX_KONTEXT_FP8]="https://huggingface.co/6chan/flux1-kontext-dev-fp8/resolve/main/flux1-kontext-dev-fp8-e4m3fn.safetensors|unet"
 ALL_DOWNLOADS[FLUX_KONTEXT_FULL]="https://huggingface.co/black-forest-labs/FLUX.1-Kontext-dev/resolve/main/flux1-kontext-dev.safetensors|unet"
 ALL_DOWNLOADS[FLUX_DEV]="https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev.safetensors|checkpoints"
 ALL_DOWNLOADS[FLUX_round_breasts_slim_waist]="https://civitai.com/api/download/models/1782533?type=Model&format=SafeTensor|loras|round_breasts_slim_waist.safetensors"
@@ -200,7 +199,6 @@ GROUP_WAN_T2V=(
     )
 
 GROUP_FLUX_KONTEXT=(
-    "FLUX_KONTEXT_FP8"
     "T5"
     "FLUX_VAE"
     "FLUX_KONTEXT_FULL"
@@ -323,7 +321,7 @@ function show_menu() {
     echo "Kies welke modelsets je wilt downloaden:"
     echo
     echo "  1) SD 3.5 Large"
-    echo "  2) FLUX"
+    echo "  2) FLUX.1 DEV"
     echo "  3) Wan 2.2 I2V"
     echo "  4) Upscalers"
     echo "  5) Wan 2.2 Animate"
