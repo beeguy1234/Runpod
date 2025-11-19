@@ -202,6 +202,7 @@ GROUP_FLUX_KONTEXT=(
     "T5"
     "FLUX_VAE"
     "FLUX_KONTEXT_FULL"
+    "CLIP_L"
     )
 
 # --- 3. DOWNLOAD FUNCTIE (AANGEPAST) ---
