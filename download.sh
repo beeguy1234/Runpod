@@ -62,6 +62,7 @@ ALL_DOWNLOADS[FLUX_realism_lora]="https://huggingface.co/XLabs-AI/flux-RealismLo
 ALL_DOWNLOADS[T5]="https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors|text_encoders"
 ALL_DOWNLOADS[CLIP_G]="https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/resolve/main/text_encoders/clip_g.safetensors|text_encoders"
 ALL_DOWNLOADS[CLIP_L]="https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/resolve/main/text_encoders/clip_l.safetensors|text_encoders"
+ALL_DOWNLOADS[CLIP_L_FLUX]="https://huggingface.co/zer0int/CLIP-GmP-ViT-L-14/resolve/main/ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors|text_encoders"
 ALL_DOWNLOADS[UMT5]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors|text_encoders"
 #ALL_DOWNLOADS[UMT5_ERROR]="https://huggingface.co/Wan-AI/Wan2.2-Animate-14B/resolve/main/models_t5_umt5-xxl-enc-bf16.pth|text_encoders|umt5-xxl-enc-bf16.pth"
 ALL_DOWNLOADS[WAN_LORA_RELIGHT]="https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_animate_14B_relight_lora_bf16.safetensors|loras"
@@ -202,7 +203,7 @@ GROUP_FLUX_KONTEXT=(
     "T5"
     "FLUX_VAE"
     "FLUX_KONTEXT_FULL"
-    "CLIP_L"
+    "CLIP_L_FLUX"
     )
 
 # --- 3. DOWNLOAD FUNCTIE (AANGEPAST) ---
