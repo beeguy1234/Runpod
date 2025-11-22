@@ -103,7 +103,16 @@ ALL_DOWNLOADS[QWEN-Image-Edit-2509_fp8_e4m3fn]="https://huggingface.co/Comfy-Org
 ALL_DOWNLOADS[QWEN_text_to_image_fp8_e4m3fn]="https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors|diffusion_models"
 ALL_DOWNLOADS[QWEN_2.5_vl_7b]="https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b.safetensors|text_encoders"
 ALL_DOWNLOADS[QWEN_IMAGE_VAE]="https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors|vae"
-ALL_DOWNLOADS[Qwen_rotate_lora]="https://huggingface.co/dx8152/Qwen-Edit-2509-Multiple-angles/resolve/main/%E9%95%9C%E5%A4%B4%E8%BD%AC%E6%8D%A2.safetensors|loras"
+ALL_DOWNLOADS[Qwen_rotate_lora]="https://huggingface.co/dx8152/Qwen-Edit-2509-Multiple-angles/resolve/main/%E9%95%9C%E5%A4%B4%E8%BD%AC%E6%8D%A2.safetensors|loras|qwen_multiple_angles.safetensors"
+ALL_DOWNLOADS[Qwen_Smartphone-Snapshot-Photo-Reality]="https://civitai.com/api/download/models/2289403?type=Model&format=SafeTensor|loras|qwen_(amateur%20photo).safetensors"
+ALL_DOWNLOADS[Qwen_nudity_fixer]="https://civitai.com/api/download/models/2199719?type=Model&format=SafeTensor|loras|qwen_nudity-fixer.safetensors"
+ALL_DOWNLOADS[Qwen_edit_skin]="https://civitai.com/api/download/models/2376235?type=Model&format=SafeTensor|loras|qwen_edit_skin.safetensors"
+ALL_DOWNLOADS[Qwen_famegrid]="https://civitai.com/api/download/models/2390198?type=Model&format=SafeTensor|loras|qwen_famegrid(IGMODEL).safetensors"  # "A iPhone photo of a IGMODEL woman"
+ALL_DOWNLOADS[Qwen_oily_skin]="https://civitai.com/api/download/models/2318278?type=Model&format=SafeTensor|loras|qwen_oily_skin.safetensors"
+ALL_DOWNLOADS[Qwen_realism]="https://civitai.com/api/download/models/2232782?type=Model&format=SafeTensor|loras|qwen_realism.safetensors"
+ALL_DOWNLOADS[Qwen_QWENxPONY]="https://civitai.com/api/download/models/2385870?type=Model&format=SafeTensor|loras|QWENxPONY.safetensors"
+ALL_DOWNLOADS[Qwen_amateur_photography]="https://civitai.com/api/download/models/2363467?type=Model&format=SafeTensor|loras|amateur_photography.safetensors"
+ALL_DOWNLOADS[Qwen_edit_breast_hips_etc_enhancer]="https://civitai.com/api/download/models/2406534?type=Model&format=SafeTensor|loras|breast_hips_etc_enhancer.safetensors"
 
 
 
@@ -217,12 +226,23 @@ GROUP_QWEN_IMAGE_EDIT=(
     "QWEN_IMAGE_VAE"
     "QWEN-Image-Edit-2509_fp8_e4m3fn"
     "Qwen_rotate_lora"
+    "Qwen_Smartphone-Snapshot-Photo-Reality"
+    "Qwen_nudity_fixer"
+    "Qwen_edit_breast_hips_etc_enhancer"
   )
 
 GROUP_QWEN_TEXT_TO_IMAGE=(
   "QWEN_2.5_vl_7b"
   "QWEN_IMAGE_VAE"
   "QWEN_text_to_image_fp8_e4m3fn"
+  "Qwen_famegrid"
+  "Qwen_Smartphone-Snapshot-Photo-Reality"
+  "Qwen_nudity_fixer"
+  "Qwen_oily_skin"
+  "Qwen_realism"
+  "Qwen_QWENxPONY"
+  "Qwen_amateur_photography"
+  
   )
   
 # --- 3. DOWNLOAD FUNCTIE (AANGEPAST) ---
