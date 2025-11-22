@@ -113,6 +113,12 @@ ALL_DOWNLOADS[Qwen_realism]="https://civitai.com/api/download/models/2232782?typ
 ALL_DOWNLOADS[Qwen_QWENxPONY]="https://civitai.com/api/download/models/2385870?type=Model&format=SafeTensor|loras|QWENxPONY.safetensors"
 ALL_DOWNLOADS[Qwen_amateur_photography]="https://civitai.com/api/download/models/2363467?type=Model&format=SafeTensor|loras|amateur_photography.safetensors"
 ALL_DOWNLOADS[Qwen_edit_breast_hips_etc_enhancer]="https://civitai.com/api/download/models/2406534?type=Model&format=SafeTensor|loras|breast_hips_etc_enhancer.safetensors"
+ALL_DOWNLOADS[Qwen_instantx-controlnet]="https://huggingface.co/Comfy-Org/Qwen-Image-InstantX-ControlNets/resolve/main/split_files/controlnet/Qwen-Image-InstantX-ControlNet-Union.safetensors|controlnet"
+ALL_DOWNLOADS[lotus-depth]="https://huggingface.co/Comfy-Org/lotus/resolve/main/lotus-depth-d-v1-1.safetensors|diffusion_models"
+ALL_DOWNLOADS[vae_for_lotus_depth]="https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors|vae|vae_for_lotus_depth.safetensors"
+
+
+
 
 
 
@@ -129,7 +135,6 @@ GROUP_SD3_5=(
     "SD3_5_IPADAPTER"
     "SD3_5_CLIPVISION"
 )
-
 # Groep 2: FLUX (Specifiek)
 GROUP_FLUX=(
     "FLUX_DEV"
@@ -139,7 +144,6 @@ GROUP_FLUX=(
     "FLUX_boring_effect"
     "FLUX_boring_elements"
 )
-
 # Groep 3: Wan 2.2 I2V (Alles voor Wan)
 GROUP_WAN_I2V=(
     "UMT5"
@@ -150,14 +154,12 @@ GROUP_WAN_I2V=(
     "WAN_DIFFMOD_I2V_LOW"
     "UPSCALER_ESRGAN_X2"
 )
-
 # Groep 4: Upscaler (Algemeen)
 GROUP_UPSCALER=(
     "UPSCALER_ESRGAN_X2"
     "UPSCALER_NOMOS_ESRGAN_X2"
     "UPSCALER_NMKD_SIAX_X4"
 )
-
 # Groep 5: Wan Animate
 GROUP_WAN_ANIMATE=(
     "UMT5"
@@ -172,7 +174,6 @@ GROUP_WAN_ANIMATE=(
     "UPSCALER_ESRGAN_X2"
     "CLIP_VISION_H"
 )
-
 # icm IPadapters
 GROUP_SDXL=(
  "Ultra_Realistic_SDXL_By-Stable_Yogi"
@@ -183,9 +184,7 @@ GROUP_SDXL=(
  "YOLOV10M"
  "OPENPOSEXL2_CONTROLNET"
  )
-
-
- GROUP_IP_ADAPTER=(
+GROUP_IP_ADAPTER=(
     "ip-adapter-faceid-plusv2_sdxl"
     "ip-adapter-faceid-plusv2_sdxl_lora"
     "ip-adapter-faceid_sdxl_lora"
@@ -213,14 +212,12 @@ GROUP_WAN_T2V=(
     "WAN_DIFFMOD_T2V_HIGH"
     "WAN_DIFFMOD_T2V_LOW"
     )
-
 GROUP_FLUX_KONTEXT=(
     "T5"
     "FLUX_VAE"
     "FLUX_KONTEXT_FULL"
     "CLIP_L_FLUX"
-    )
-    
+    )   
 GROUP_QWEN_IMAGE_EDIT=(
     "QWEN_2.5_vl_7b"
     "QWEN_IMAGE_VAE"
@@ -230,7 +227,6 @@ GROUP_QWEN_IMAGE_EDIT=(
     "Qwen_nudity_fixer"
     "Qwen_edit_breast_hips_etc_enhancer"
   )
-
 GROUP_QWEN_TEXT_TO_IMAGE=(
   "QWEN_2.5_vl_7b"
   "QWEN_IMAGE_VAE"
@@ -242,7 +238,11 @@ GROUP_QWEN_TEXT_TO_IMAGE=(
   "Qwen_realism"
   "Qwen_QWENxPONY"
   "Qwen_amateur_photography"
-  
+  )
+GROUP_QWEN_CONTROLNET=(
+  "Qwen_instantx-controlnet"
+  "lotus-depth"
+  "vae_for_lotus_depth"
   )
   
 # --- 3. DOWNLOAD FUNCTIE (AANGEPAST) ---
@@ -373,6 +373,7 @@ function show_menu() {
     echo "  10) Flux KONTEXT"
     echo "  11) QWEN Image Edit"
     echo "  12) QWEN Text to Image"
+    echo "  13) QWEN Text to Image + Controlnet"
     echo
     echo "  q) Stoppen (Quit)"
     echo "-------------------------------------"
@@ -422,6 +423,10 @@ while true; do
             ;;
         12)
             download_files "${GROUP_QWEN_TEXT_TO_IMAGE[@]}"
+            ;;
+        13)
+            download_files "${GROUP_QWEN_TEXT_TO_IMAGE[@]}"
+            download_files "${GROUP_QWEN_CONTROLNET[@]}"
             ;;
         q|Q)
             echo "Script stoppen."
