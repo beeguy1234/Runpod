@@ -103,7 +103,7 @@ ALL_DOWNLOADS[QWEN-Image-Edit-2509_fp8_e4m3fn]="https://huggingface.co/Comfy-Org
 ALL_DOWNLOADS[QWEN_text_to_image_fp8_e4m3fn]="https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors|diffusion_models"
 ALL_DOWNLOADS[QWEN_2.5_vl_7b]="https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b.safetensors|text_encoders"
 ALL_DOWNLOADS[QWEN_IMAGE_VAE]="https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors|vae"
-ALL_DOWNLOADS[Qwen_rotate_lora]="https://huggingface.co/dx8152/Qwen-Edit-2509-Multiple-angles/resolve/main/%E9%95%9C%E5%A4%B4%E8%BD%AC%E6%8D%A2.safetensors|lora"
+ALL_DOWNLOADS[Qwen_rotate_lora]="https://huggingface.co/dx8152/Qwen-Edit-2509-Multiple-angles/resolve/main/%E9%95%9C%E5%A4%B4%E8%BD%AC%E6%8D%A2.safetensors|loras"
 
 
 
