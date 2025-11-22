@@ -99,6 +99,11 @@ ALL_DOWNLOADS[CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors]="https://huggingface.
 ALL_DOWNLOADS[OPENPOSEXL2_CONTROLNET]="https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0/resolve/main/OpenPoseXL2.safetensors|controlnet"
 ALL_DOWNLOADS[SEEDVR2_3B_FP16]="https://huggingface.co/numz/SeedVR2_comfyUI/resolve/main/seedvr2_ema_3b_fp16.safetensors|SEEDVR2"
 ALL_DOWNLOADS[SEEDVR2_7B_FP16]="https://huggingface.co/numz/SeedVR2_comfyUI/resolve/main/seedvr2_ema_7b_fp16.safetensors|SEEDVR2"
+ALL_DOWNLOADS[QWEN-Image-Edit-2509_fp8_e4m3fn]="https://huggingface.co/Comfy-Org/Qwen-Image-Edit_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_edit_2509_fp8_e4m3fn.safetensors|diffusion_models"
+ALL_DOWNLOADS[QWEN_text_to_image_fp8_e4m3fn]="https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors"
+ALL_DOWNLOADS[QWEN_2.5_vl_7b]="https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b.safetensors|text_encoders"
+ALL_DOWNLOADS[QWEN_IMAGE_VAE]="https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors|vae"
+
 
 
 # --- 2. DEFINIEER HIER JE GROEPEN ---
@@ -205,7 +210,20 @@ GROUP_FLUX_KONTEXT=(
     "FLUX_KONTEXT_FULL"
     "CLIP_L_FLUX"
     )
+    
+GROUP_QWEN_IMAGE_EDIT=(
+    "QWEN_2.5_vl_7b"
+    "QWEN_IMAGE_VAE"
+    "QWEN-Image-Edit-2509_fp8_e4m3fn"
 
+  )
+
+GROUP_QWEN_TEXT_TO_IMAGE=(
+  "QWEN_2.5_vl_7b"
+  "QWEN_IMAGE_VAE"
+  "QWEN_text_to_image_fp8_e4m3fn"
+  )
+  
 # --- 3. DOWNLOAD FUNCTIE (AANGEPAST) ---
 # Deze functie verwerkt het downloaden.
 # Gebruik: download_files "key1" "key2" "key3" ...
@@ -332,6 +350,8 @@ function show_menu() {
     echo "  8) Illustrious Realism"
     echo "  9) Wan 2.2 T2V"
     echo "  10) Flux KONTEXT"
+    echo "  11) QWEN Image Edit"
+    echo "  12) QWEN Text to Image"
     echo
     echo "  q) Stoppen (Quit)"
     echo "-------------------------------------"
@@ -374,6 +394,13 @@ while true; do
             ;;
         10)
             download_files "${GROUP_FLUX_KONTEXT[@]}"
+            ;;
+            
+        11)
+            download_files "${GROUP_QWEN_IMAGE_EDIT[@]}"
+            ;;
+        12)
+            download_files "${GROUP_QWEN_TEXT_TO_IMAGE[@]}"
             ;;
         q|Q)
             echo "Script stoppen."
