@@ -10,6 +10,9 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
+# Zorg dat Ctrl+C het script netjes afsluit
+trap "echo -e '\n${YELLOW}Script afgebroken door gebruiker.${NC}'; exit" INT
+
 # Check of de map bestaat
 if [ ! -d "$TARGET_DIR" ]; then
     echo -e "${RED}Fout: De map $TARGET_DIR bestaat niet.${NC}"
@@ -63,7 +66,18 @@ while true; do
     
     # Gebruikersinput vragen
     echo -e "${GREEN}Typ het nummer om te verwijderen, of 'q' om te stoppen.${NC}"
-    read -p "Keuze: " choice
+    
+    # Aangepast: read checkt nu exit status (|| break) om loops bij EOF te voorkomen
+    # -r zorgt dat backslashes letterlijk worden genomen
+    if ! read -r -p "Keuze: " choice; then
+        echo # Nieuwe regel bij EOF
+        break
+    fi
+
+    # Lege input opvangen (gewoon enter drukken) -> herlaadt menu zonder foutmelding
+    if [[ -z "$choice" ]]; then
+        continue
+    fi
 
     # Stoppen als q wordt getypt
     if [[ "$choice" == "q" || "$choice" == "Q" ]]; then
@@ -100,7 +114,11 @@ while true; do
     # Bevestiging en verwijderen
     display_name="${file_to_delete#$BASE_PATH_TO_STRIP}"
     echo -e "Je staat op het punt te verwijderen: ${YELLOW}$display_name${NC}"
-    read -p "Weet je het zeker? (y/n): " confirm
+    
+    # Ook hier veilig lezen
+    if ! read -r -p "Weet je het zeker? (y/n): " confirm; then
+        echo; break
+    fi
     
     if [[ "$confirm" == "y" || "$confirm" == "Y" ]]; then
         rm "$file_to_delete"
@@ -109,7 +127,7 @@ while true; do
             sleep 1
         else
             echo -e "${RED}Fout bij verwijderen (rechten probleem?).${NC}"
-            read -p "Druk op enter om door te gaan."
+            read -r -p "Druk op enter om door te gaan." _
         fi
     else
         echo "Geannuleerd."
