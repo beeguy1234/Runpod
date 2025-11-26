@@ -101,13 +101,7 @@ while true; do
     display_name="${file_to_delete#$BASE_PATH_TO_STRIP}"
     echo -e "Verwijderen: ${YELLOW}$display_name${NC}"
     
-    read -r -p "Zeker weten? (y/n): " confirm < "$INPUT_SOURCE"
-    
-    if [[ "$confirm" == "y" || "$confirm" == "Y" ]]; then
-        rm "$file_to_delete" && echo -e "${GREEN}Verwijderd.${NC}" || echo -e "${RED}Fout bij verwijderen.${NC}"
-        sleep 1
-    else
-        echo "Geannuleerd."
-        sleep 1
-    fi
+    # Direct verwijderen zonder confirmatie
+    rm "$file_to_delete" && echo -e "${GREEN}Verwijderd.${NC}" || echo -e "${RED}Fout bij verwijderen.${NC}"
+    sleep 1
 done
