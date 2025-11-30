@@ -117,6 +117,9 @@ ALL_DOWNLOADS[Qwen_edit_breast_hips_etc_enhancer]="https://civitai.com/api/downl
 ALL_DOWNLOADS[Qwen_instantx-controlnet]="https://huggingface.co/Comfy-Org/Qwen-Image-InstantX-ControlNets/resolve/main/split_files/controlnet/Qwen-Image-InstantX-ControlNet-Union.safetensors|controlnet"
 ALL_DOWNLOADS[lotus-depth]="https://huggingface.co/Comfy-Org/lotus/resolve/main/lotus-depth-d-v1-1.safetensors|diffusion_models"
 ALL_DOWNLOADS[vae_for_lotus_depth]="https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors|vae|vae_for_lotus_depth.safetensors"
+ALL_DOWNLOADS[flux2-dev]="https://huggingface.co/black-forest-labs/FLUX.2-dev/resolve/main/flux2-dev.safetensors|diffusion_models"
+ALL_DOWNLOADS[flux2-vae]"https://huggingface.co/black-forest-labs/FLUX.2-dev/resolve/main/ae.safetensors|vae|flux2-vae.safetensors"
+ALL_DOWNLOADS[flux2-mistral]="https://huggingface.co/Comfy-Org/flux2-dev/blob/main/split_files/text_encoders/mistral_3_small_flux2_fp8.safetensors|text_encoders"
 
 
 
@@ -245,6 +248,11 @@ GROUP_QWEN_CONTROLNET=(
   "Qwen_instantx-controlnet"
   "lotus-depth"
   "vae_for_lotus_depth"
+  )
+GROUP_FLUX2=(
+  "flux2-dev"
+  "flux2-vae"
+  "flux2-mistral"
   )
   
 # --- 3. DOWNLOAD FUNCTIE (AANGEPAST) ---
@@ -376,6 +384,7 @@ function show_menu() {
     echo "  11) QWEN Image Edit"
     echo "  12) QWEN Text to Image"
     echo "  13) QWEN Text to Image + Controlnet"
+    echo "  14) Flux2 (80GB!)"
     echo
     echo "  q) Stoppen (Quit)"
     echo "-------------------------------------"
@@ -429,6 +438,9 @@ while true; do
         13)
             download_files "${GROUP_QWEN_TEXT_TO_IMAGE[@]}"
             download_files "${GROUP_QWEN_CONTROLNET[@]}"
+            ;;
+        14)
+            download_files "${GROUP_FLUX2[@]}"         
             ;;
         q|Q)
             echo "Script stoppen."
