@@ -118,7 +118,7 @@ ALL_DOWNLOADS[Qwen_instantx-controlnet]="https://huggingface.co/Comfy-Org/Qwen-I
 ALL_DOWNLOADS[lotus-depth]="https://huggingface.co/Comfy-Org/lotus/resolve/main/lotus-depth-d-v1-1.safetensors|diffusion_models"
 ALL_DOWNLOADS[vae_for_lotus_depth]="https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors|vae|vae_for_lotus_depth.safetensors"
 ALL_DOWNLOADS[flux2-dev]="https://huggingface.co/black-forest-labs/FLUX.2-dev/resolve/main/flux2-dev.safetensors|diffusion_models"
-ALL_DOWNLOADS[flux2-vae]"https://huggingface.co/black-forest-labs/FLUX.2-dev/resolve/main/ae.safetensors|vae|flux2-vae.safetensors"
+ALL_DOWNLOADS[flux2-vae]="https://huggingface.co/black-forest-labs/FLUX.2-dev/resolve/main/ae.safetensors|vae|flux2-vae.safetensors"
 ALL_DOWNLOADS[flux2-mistral]="https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/text_encoders/mistral_3_small_flux2_fp8.safetensors|text_encoders"
 
 
